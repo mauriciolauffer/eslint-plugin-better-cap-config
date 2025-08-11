@@ -1,0 +1,58 @@
+{
+  "log": {
+    "levels": {
+      "odata": "warn",
+      "cds": "warn",
+      "cli": "warn"
+    }
+  },
+  "requires": {
+    "[hybrid]": {
+      "db": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.ap10.hana.ondemand.com",
+          "org": "SAP CP APJ CustomerSuccessTeam_cspindev",
+          "space": "btpapps",
+          "instance": "cloudcapability-db",
+          "key": "cloudcapability-db-key",
+          "resolved": false
+        },
+        "kind": "hana-cloud",
+        "vcap": {
+          "name": "db"
+        }
+      },
+      "auth": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.ap10.hana.ondemand.com",
+          "org": "SAP CP APJ CustomerSuccessTeam_cspindev",
+          "space": "btpapps",
+          "instance": "cloudcapability-uaa",
+          "key": "cloudcapability-uaa-key",
+          "resolved": false
+        },
+        "kind": "xsuaa-auth",
+        "vcap": {
+          "name": "auth"
+        }
+      },
+      "destinations": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.ap10.hana.ondemand.com",
+          "org": "SAP CP APJ CustomerSuccessTeam_cspindev",
+          "space": "btpapps",
+          "instance": "cloudcapability-destination",
+          "key": "cloudcapability-destination-key",
+          "resolved": false
+        },
+        "kind": "destinations",
+        "vcap": {
+          "name": "destinations"
+        }
+      }
+    }
+  }
+}

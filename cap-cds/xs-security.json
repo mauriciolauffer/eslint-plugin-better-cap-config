@@ -1,0 +1,166 @@
+{
+  "xsappname": "engagementplanner",
+  "xsappname": "engagementplanner",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "uaa.user",
+      "description": "UAA"
+    },
+    {
+      "name": "$XSAPPNAME.AdoptionTrackerViewer",
+      "description": "EngagementPlannerViewer"
+    },
+    {
+      "name": "$XSAPPNAME.AdoptionTrackerAdmin",
+      "description": "EngagementPlannerAdmin"
+    },
+    {
+      "name": "$XSAPPNAME.AdoptionTrackerProductsEditor",
+      "description": "EngagementPlannerProductsEditor"
+    },
+    {
+      "name": "$XSAPPNAME.AdoptionTrackerSupportingTeamsEditor",
+      "description": "EngagementPlannerSupportingTeamsEditor"
+    },
+    {
+      "name": "$XSAPPNAME.AdoptionTrackerREADONLY",
+      "description": "EngagementPlanner READ-ONLY"
+    },
+    {
+      "name": "$XSAPPNAME.FREActivityAdmin",
+      "description": "ActivityRepoAdmin"
+    },
+    {
+      "name": "$XSAPPNAME.FREActivityReviewer",
+      "description": "ActivityRepoReviewer"
+    },
+    {
+      "name": "$XSAPPNAME.FREActivityViewer",
+      "description": "ActivityRepoViewer"
+    },
+    {
+      "name": "$XSAPPNAME.GlobalTeamEditor",
+      "description": "GlobalTeamEditor"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "Token_Exchange",
+      "description": "UAA Token Exchange",
+      "scope-references": ["uaa.user"]
+    },
+    {
+      "name": "AdoptionTrackerViewer",
+      "description": "generated",
+      "scope-references": ["$XSAPPNAME.AdoptionTrackerViewer"],
+      "attribute-references": []
+    },
+    {
+      "name": "AdoptionTrackerAdmin",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.AdoptionTrackerAdmin",
+        "xs_authorization.read",
+        "xs_authorization.write",
+        "xs_user.read",
+        "xs_user.write",
+        "xs_idp.read",
+        "xs_idp.write"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "AdoptionTrackerProductsEditor",
+      "description": "generated",
+      "scope-references": ["$XSAPPNAME.AdoptionTrackerProductsEditor"],
+      "attribute-references": []
+    },
+    {
+      "name": "AdoptionTrackerSupportingTeamsEditor",
+      "description": "generated",
+      "scope-references": ["$XSAPPNAME.AdoptionTrackerSupportingTeamsEditor"],
+      "attribute-references": []
+    },
+    {
+      "name": "AdoptionTrackerREADONLY",
+      "description": "generated",
+      "scope-references": ["$XSAPPNAME.AdoptionTrackerREADONLY"],
+      "attribute-references": []
+    },
+    {
+      "name": "FREActivityAdmin",
+      "description": "generated",
+      "scope-references": ["$XSAPPNAME.FREActivityAdmin"],
+      "attribute-references": []
+    },
+    {
+      "name": "FREActivityReviewer",
+      "description": "generated",
+      "scope-references": ["$XSAPPNAME.FREActivityReviewer"],
+      "attribute-references": []
+    },
+    {
+      "name": "FREActivityViewer",
+      "description": "generated",
+      "scope-references": ["$XSAPPNAME.FREActivityViewer"],
+      "attribute-references": []
+    },
+    {
+      "name": "GlobalTeamEditor",
+      "description": "generated",
+      "scope-references": ["$XSAPPNAME.GlobalTeamEditor"],
+      "attribute-references": []
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "AdoptionTrackerAdmin",
+      "description": "Perform Admin Tasks in the Engagement Planner",
+      "role-template-references": ["$XSAPPNAME.AdoptionTrackerAdmin"]
+    },
+    {
+      "name": "AdoptionTrackerViewer",
+      "description": "Manage Engagement Planner Customers & Activities",
+      "role-template-references": ["$XSAPPNAME.AdoptionTrackerViewer"]
+    },
+    {
+      "name": "AdoptionTrackerProductsEditor",
+      "description": "Maintain Engagement Planner Product Master Data",
+      "role-template-references": ["$XSAPPNAME.AdoptionTrackerProductsEditor"]
+    },
+    {
+      "name": "AdoptionTrackerSupportingTeamsEditor",
+      "description": "Maintain Engagement Planner SupportingTeam Master Data",
+      "role-template-references": [
+        "$XSAPPNAME.AdoptionTrackerSupportingTeamsEditor"
+      ]
+    },
+    {
+      "name": "AdoptionTrackerREADONLY",
+      "description": "View Engagement Planner Customers & Activities",
+      "role-template-references": ["$XSAPPNAME.AdoptionTrackerREADONLY"]
+    },
+    {
+      "name": "FREActivityAdmin",
+      "description": "Manage Activities in the FRE Activity Repository",
+      "role-template-references": ["$XSAPPNAME.FREActivityAdmin"]
+    },
+    {
+      "name": "FREActivityReviewer",
+      "description": "Review Activities in the FRE Activity Repository",
+      "role-template-references": ["$XSAPPNAME.FREActivityReviewer"]
+    },
+    {
+      "name": "FREActivityViewer",
+      "description": "View Activities inthe FRE Activity Repository",
+      "role-template-references": ["$XSAPPNAME.FREActivityViewer"]
+    },
+    {
+      "name": "GlobalTeamEditor",
+      "description": "Maintain Global Team Master Data",
+      "role-template-references": ["$XSAPPNAME.GlobalTeamEditor"]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "requires": {
+    "destinations": true,
+    "html5-repo": true,
+    "uaa": {
+      "kind": "xsuaa"
+    },
+    "auth": {
+      "[production]": {
+        "kind": "xsuaa"
+      },
+      "[development]": {
+        "kind": "mocked",
+        "users": {
+          "editor": {
+            "attr": {
+              "email": "editor@sap.com"
+            },
+            "roles": ["CloudCapabilityEditor"]
+          },
+          "viewer": {
+            "attr": {
+              "email": "viewer@sap.com"
+            },
+            "roles": ["CloudCapabilityViewer"]
+          }
+        }
+      }
+    },
+    "db": {
+      "[production]": {
+        "kind": "hana"
+      },
+      "[development]": {
+        "kind": "sql"
+      },
+      "model": ["db", "srv"]
+    },
+    "db-ext": {
+      "[development]": {
+        "model": "db/test"
+      },
+      "[production]": {
+        "model": "db/hana"
+      }
+    }
+  },
+  "cdsc": {
+    "severities": {
+      "odata-spec-violation-no-key": "Warning"
+    }
+  }
+}

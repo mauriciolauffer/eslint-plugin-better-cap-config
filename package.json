@@ -1,0 +1,30 @@
+{
+  "name": "eslint-plugin-cds-deprecated-config",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "type": "module",
+  "main": "src/index.js",
+  "files": [
+    "src/",
+    "docs/"
+  ],
+  "scripts": {
+    "test": "node --test test/**/*.test.js",
+    "test:watch": "node --test --watch test/**/*.test.js",
+    "lint": "eslint --cache && prettier . --check --cache",
+    "format": "prettier . --write"
+  },
+  "dependencies": {
+    "@eslint/json": "^0.13.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.31.0",
+    "eslint-config-mlauffer-nodejs": "^3.1.0",
+    "prettier": "^3.6.2",
+    "vitest": "^3.2.4"
+  }
+}

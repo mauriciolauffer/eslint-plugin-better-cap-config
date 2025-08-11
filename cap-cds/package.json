@@ -1,0 +1,214 @@
+{
+  "name": "engagementplanner",
+  "version": "1.0.6",
+  "description": "BTP Customer Success Tooling.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "dependencies": {
+    "@cap-js-community/odata-v2-adapter": "^1.14.2",
+    "@cap-js-community/odata-v2-adapter": "^1.14.2",
+    "@cap-js/attachments": "^1.1.8",
+    "@cap-js/change-tracking": "^1.0.6",
+    "@cap-js/hana": "^1.4.1",
+    "@cap-js/notifications": "^0.2.3",
+    "@cap-js/telemetry": ">=0",
+    "@grpc/grpc-js": "^1",
+    "@opentelemetry/exporter-metrics-otlp-grpc": "^0",
+    "@opentelemetry/exporter-trace-otlp-grpc": "^0",
+    "@opentelemetry/host-metrics": "^0",
+    "@sap/cds": "^8.4.0",
+    "@sap/xsenv": "^5.1.0",
+    "@sap/xssec": "^3",
+    "express": "^4.21.1",
+    "papaparse": "^5.4.1"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.7.0",
+    "@cap-js/sqlite": "^1.7.6",
+    "@sap/cds-dk": "^8.4.0",
+    "@sap/eslint-plugin-cds": "^3.0.4",
+    "@sap/ux-specification": "^1.120.17",
+    "@wdio/cli": "^8.39.0",
+    "@wdio/local-runner": "^8.39.0",
+    "@wdio/mocha-framework": "^8.39.0",
+    "@wdio/spec-reporter": "^8.39.0",
+    "cds-launchpad-plugin": "^2.2.0",
+    "cds-plugin-ui5": "^0.11.1",
+    "chromedriver": "^125.0.2",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.5.0",
+    "mbt": "^1.2.29",
+    "rimraf": "^5.0.10",
+    "wdio-qunit-service": "^0.2.0",
+    "wdio-wait-for": "^3.0.11"
+  },
+  "engines": {
+    "node": "^20"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "version:patch:cap": "npm version patch",
+    "version:patch:customers": "npm version patch -w app/customers",
+    "version:patch:activities": "npm version patch -w app/activities",
+    "version:patch:activityrepo": "npm version patch -w app/activityrepo",
+    "version:patch:products": "npm version patch -w app/products",
+    "version:patch:supportingteams": "npm version patch -w app/supportingteams",
+    "version:patch:consumptionblockers": "npm version patch -w app/consumptionblockers",
+    "version:patch:risks": "npm version patch -w app/risks",
+    "start-cicd": "cds-serve --profile cicd",
+    "lint": "cds lint && eslint . && npm run lint --workspaces --if-present",
+    "undeploy": "cf undeploy engagementplanner --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "build-small": "rimraf resources mta_archives && mbt build -e mtasmall.mtaext --mtar archive",
+    "build-small-fast": "rimraf resources mta_archives && mbt build -m=verbose -e mtasmall.mtaext --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "test-all-cicd": "npm run test-customer-cicd && npm run test-activityrepo-cicd && npm run test-products-cicd",
+    "test-customer": "wdio run ./app/customers/webapp/test/wdio.conf.js",
+    "test-activityrepo": "wdio run ./app/activityrepo/webapp/test/wdio.conf.js",
+    "test-products": "wdio run ./app/products/webapp/test/wdio.conf.js",
+    "test-customer-cicd": "concurrently -n CDS,===WDIO=== -c blue,green --success first --kill-others --hide CDS \"npm run start-cicd\" \"npm run test-customer\"",
+    "test-activityrepo-cicd": "concurrently -n CDS,===WDIO=== -c blue,green --success first --kill-others --hide CDS \"npm run start-cicd\" \"npm run test-activityrepo\"",
+    "test-products-cicd": "concurrently -n CDS,===WDIO=== -c blue,green --success first --kill-others --hide CDS \"npm run start-cicd\" \"npm run test-products\"",
+    "test-local-customer": "cds watch --open customers/webapp/test/integration/opaTests.qunit.html",
+    "test-local-activityrepo": "cds watch --open activityrepo/webapp/test/integration/opaTests.qunit.html",
+    "test-local-products": "cds watch --open products/webapp/test/integration/opaTests.qunit.html",
+    "watch-customers": "cds watch --open customers/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-activities": "cds watch --open activities/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-activityrepo": "cds watch --open activityrepo/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-products": "cds watch --open products/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-supportingteams": "cds watch --open supportingteams/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-consumptionblockers": "cds watch --open com.sap.pntcee.consumptionblockers/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-risks": "cds watch --open com.sap.pntcee.risks/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-accountassignments": "cds watch --open com.sap.pntcee.accountassignments/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-btpglobalteam": "cds watch --open com.sap.pntcee.btpglobalteam/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-accountassignmentreport": "cds watch --open com.sap.pntcee.accountassignmentreport/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-forecasts": "cds watch --open com.sap.pntcee.forecasts/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "cds": {
+    "sql": {
+      "native_hana_associations": false
+    },
+    "requires": {
+      "[production]": {
+        "db": "hana",
+        "db-ext": {
+          "model": [
+            "data-config-tables",
+            "db/hana"
+          ]
+        },
+        "auth": "xsuaa",
+        "telemetry": {
+          "kind": "to-cloud-logging"
+        }
+      },
+      "[development]": {
+        "--db": "sql",
+        "db-ext": {
+          "model": [
+            "data-config-tables",
+            "data-test-transactional",
+            "db/sqlite"
+          ]
+        },
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "viewer": {
+              "attr": {
+                "email": "viewer@sap.com"
+              },
+              "roles": [
+                "AdoptionTrackerViewer"
+              ]
+            },
+            "admin": {
+              "attr": {
+                "email": "admin@sap.com"
+              },
+              "roles": [
+                "AdoptionTrackerAdmin",
+                "AdoptionTrackerViewer",
+                "AdoptionTrackerProductsEditor",
+                "AdoptionTrackerSupportingTeamsEditor",
+                "FREActivityAdmin",
+                "FREActivityReviewer",
+                "FREActivityViewer",
+                "GlobalTeamEditor"
+              ]
+            },
+            "readonly": {
+              "attr": {
+                "email": "readonly@sap.com"
+              },
+              "roles": [
+                "AdoptionTrackerREADONLY",
+                "FREActivityViewer"
+              ]
+            },
+            "aradmin": {
+              "attr": {
+                "email": "admin@sap.com"
+              },
+              "roles": [
+                "FREActivityAdmin",
+                "FREActivityViewer"
+              ]
+            },
+            "arreviewer": {
+              "attr": {
+                "email": "reviewer@sap.com"
+              },
+              "roles": [
+                "FREActivityReviewer",
+                "FREActivityViewer"
+              ]
+            }
+          }
+        }
+      },
+      "[cicd]": {
+        "--db": "sql",
+        "db-ext": {
+          "model": [
+            "data-config-tables",
+            "data-test-transactional",
+            "db/sqlite"
+          ]
+        },
+        "auth": {
+          "kind": "dummy"
+        }
+      },
+      "[hybrid]": {
+        "db": "hana"
+      },
+      "notifications": {
+        "destination": "SAP_Notifications",
+        "[hybrid]": {
+          "kind": "notify-to-rest"
+        }
+      }
+    },
+    "launchpad": {
+      "version": "1.125.1"
+    }
+  },
+  "sapux": [
+    "app/customers",
+    "app/activities",
+    "app/activityrepo",
+    "app/products",
+    "app/supportingteams",
+    "app/consumptionblockers",
+    "app/risks",
+    "app/accountassignments",
+    "app/btpglobalteam",
+    "app/accountassignmentreport",
+    "app/forecasts"
+  ]
+}
