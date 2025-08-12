@@ -1,9 +1,21 @@
+/**
+ * @fileoverview ESLint plugin to detect deprecated CDS configuration patterns
+ * @author mauriciolauffer
+ */
+
 import type { ESLint } from "eslint";
+import {readFile} from "node:fs/promises";
 import { JSONLanguage } from "@eslint/json";
 // import pkg from "../package.json" with { type: "json" };
 import noDeprecatedCdsFioriDraftCompat from "./rules/no-deprecated-cds-fiori-draft-compat.js";
 import noDeprecatedCdsFeaturesOdataNewAdapter from "./rules/no-deprecated-cds-features-odata-new-adapter.js";
 import noDeprecatedCdsFeaturesCdsValidate from "./rules/no-deprecated-cds-features-cds-validate.js";
+
+const pkg = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
+
+/**
+ * Collection of all available rules in this plugin
+ */
 
 const rules = {
   "no-deprecated-cds-fiori-draft-compat": noDeprecatedCdsFioriDraftCompat,
@@ -12,14 +24,13 @@ const rules = {
   "no-deprecated-cds-features-cds-validate": noDeprecatedCdsFeaturesCdsValidate,
 };
 
+/**
+ * ESLint plugin for detecting deprecated CDS configuration patterns
+ */
 const plugin: ESLint.Plugin = {
-  /* meta: {
+  meta: {
     name: pkg.name,
     version: pkg.version,
-  }, */
-  meta: {
-    name: "eslint-plugin-cds-deprecated-config",
-    version: "0.0.1",
   },
   languages: {
     json: new JSONLanguage({ mode: "json" }),
@@ -28,7 +39,7 @@ const plugin: ESLint.Plugin = {
   configs: {
     recommended: {
       plugins: {
-        "cds-deprecated-config": null as any, // Placeholder, will be filled below
+        "cds-deprecated-config": null as unknown as ESLint.Plugin, // Placeholder, will be filled below
       },
       language: "cds-deprecated-config/json",
       rules: {
@@ -43,6 +54,12 @@ const plugin: ESLint.Plugin = {
 };
 
 // Fix circular reference after plugin is defined
-(plugin.configs as any).recommended.plugins["cds-deprecated-config"] = plugin;
+const recommendedConfig = plugin.configs!.recommended as Record<
+  string,
+  unknown
+>;
+(recommendedConfig.plugins as Record<string, ESLint.Plugin>)[
+  "cds-deprecated-config"
+] = plugin;
 
 export default plugin;

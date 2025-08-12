@@ -1,16 +1,113 @@
 # ESLint Plugin CDS Deprecated Config
 
-An ESLint plugin for validating JSON files with custom rules.
+[![npm version](https://badge.fury.io/js/eslint-plugin-cds-deprecated-config.svg)](https://badge.fury.io/js/eslint-plugin-cds-deprecated-config)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+
+An ESLint plugin for detecting deprecated SAP CAP CDS (Cloud Application Programming) configuration patterns in JSON files.
+
+## Features
+
+- Detects deprecated SAP CAP configuration patterns
+- Works with `package.json`, `.cdsrc.json`, and other CDS configuration files
+- Modern ESLint v9+ support with flat config
+
+## Installation
+
+```bash
+npm install --save-dev eslint eslint-plugin-cds-deprecated-config
+```
 
 ## Rules
 
-### `no-empty-keys`
+### `no-deprecated-cds-fiori-draft-compat`
 
-Disallows empty keys in JSON objects.
+Disallows the deprecated `cds.fiori.draft_compat` configuration.
+
+**❌ Incorrect:**
+
+```json
+{
+  "cds": {
+    "fiori": {
+      "draft_compat": true
+    }
+  }
+}
+```
+
+**✅ Correct:**
+
+```json
+{
+  "cds": {
+    "fiori": {
+      "preview": true
+    }
+  }
+}
+```
+
+### `no-deprecated-cds-features-odata-new-adapter`
+
+Disallows setting `cds.features.odata_new_adapter` to `false` (deprecated behavior).
+
+**❌ Incorrect:**
+
+```json
+{
+  "cds": {
+    "features": {
+      "odata_new_adapter": false
+    }
+  }
+}
+```
+
+**✅ Correct:**
+
+```json
+{
+  "cds": {
+    "features": {
+      "odata_new_adapter": true
+    }
+  }
+}
+```
+
+### `no-deprecated-cds-features-cds-validate`
+
+Disallows setting `cds.features.cds_validate` to `false` (deprecated behavior).
+
+**❌ Incorrect:**
+
+```json
+{
+  "cds": {
+    "features": {
+      "cds_validate": false
+    }
+  }
+}
+```
+
+**✅ Correct:**
+
+```json
+{
+  "cds": {
+    "features": {
+      "cds_validate": true
+    }
+  }
+}
+```
 
 ## Configuration
 
 Add the plugin to your ESLint configuration:
+
+### ESLint v9+ (Flat Config)
 
 ```javascript
 import cdsDeprecatedConfig from "eslint-plugin-cds-deprecated-config";
@@ -18,28 +115,79 @@ import cdsDeprecatedConfig from "eslint-plugin-cds-deprecated-config";
 export default [
   {
     files: ["**/*.json"],
-    plugins: { cdsDeprecatedConfig },
-    language: "json/json",
+    plugins: {
+      "cds-deprecated-config": cdsDeprecatedConfig,
+    },
+    language: "cds-deprecated-config/json",
     rules: {
-      "cdsDeprecatedConfig/no-deprecated-cds-fiori-draft-compat": "warn",
-      "cdsDeprecatedConfig/no-deprecated-cds-features-odata-new-adapter":
-        "warn",
-      "cdsDeprecatedConfig/no-deprecated-cds-features-cds-validate": "warn",
+      "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat": "error",
+      "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter":
+        "error",
+      "cds-deprecated-config/no-deprecated-cds-features-cds-validate": "error",
     },
   },
 ];
 ```
 
-## Installation
+### Using the Recommended Configuration
 
-```bash
-npm install eslint-plugin-cds-deprecated-config
+```javascript
+import cdsDeprecatedConfig from "eslint-plugin-cds-deprecated-config";
+
+export default [
+  {
+    files: ["**/*.json"],
+    ...cdsDeprecatedConfig.configs.recommended,
+  },
+];
 ```
 
-## Usage
+## Prerequisites
 
-The plugin works with ESLint's JSON language support. Make sure you have `@eslint/json` installed:
+This plugin requires:
+
+- ESLint v9.0.0 or higher
+- Node.js v18.0.0 or higher
+- `@eslint/json` for JSON language support
+
+Install the required dependencies:
 
 ```bash
-npm install @eslint/json
+npm install --save-dev eslint @eslint/json
 ```
+
+## Supported Files
+
+The plugin works with:
+
+- `package.json` files
+- `.cdsrc.json` files
+- Any JSON files containing CDS configuration
+- JSON files in `cap-cds/` directories
+
+## Development
+
+### Building
+
+```bash
+pnpm build
+```
+
+### Testing
+
+```bash
+pnpm test
+pnpm test:watch
+pnpm test:coverage
+```
+
+### Linting
+
+```bash
+pnpm lint
+pnpm lint:fix
+```
+
+## License
+
+MIT License
