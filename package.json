@@ -7,24 +7,34 @@
   "license": "ISC",
   "packageManager": "pnpm@10.12.1",
   "type": "module",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "src/",
+    "dist/",
     "docs/"
   ],
   "scripts": {
-    "test": "node --test test/**/*.test.js",
-    "test:watch": "node --test --watch test/**/*.test.js",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "test": "pnpm build && vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "lint": "eslint --cache && prettier . --check --cache",
     "format": "prettier . --write"
   },
   "dependencies": {
-    "@eslint/json": "^0.13.0"
+    "@eslint/json": "^0.13.1"
   },
   "devDependencies": {
-    "eslint": "^9.31.0",
+    "@eslint/core": "^0.15.2",
+    "@humanwhocodes/momoa": "^3.3.9",
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^22.17.1",
+    "@vitest/coverage-v8": "3.2.4",
+    "eslint": "^9.33.0",
     "eslint-config-mlauffer-nodejs": "^3.1.0",
     "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   }
 }

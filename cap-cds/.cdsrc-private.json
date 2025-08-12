@@ -6,6 +6,9 @@
       "cli": "warn"
     }
   },
+  "features": {
+    "odata_new_adapter": false
+  },
   "requires": {
     "[hybrid]": {
       "db": {

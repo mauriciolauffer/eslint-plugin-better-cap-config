@@ -1,6 +1,6 @@
 import { defineConfig } from "eslint/config";
 import json from "@eslint/json";
-import cdsDeprecatedConfig from "./src/index.js";
+import cdsDeprecatedConfig from "./dist/index.js";
 
 export default defineConfig([
   {
@@ -8,15 +8,12 @@ export default defineConfig([
     ignores: ["node_modules/**", "package-lock.json", "pnpm-lock.yaml"],
     plugins: {
       json,
-      cdsDeprecatedConfig,
+      "cds-deprecated-config": cdsDeprecatedConfig,
     },
     language: "json/json",
+    extends: [cdsDeprecatedConfig.configs.recommended],
     rules: {
       "json/no-duplicate-keys": "error",
-      "cdsDeprecatedConfig/no-deprecated-cds-fiori-draft-compat": "warn",
-      "cdsDeprecatedConfig/no-deprecated-cds-features-odata-new-adapter":
-        "warn",
-      "cdsDeprecatedConfig/no-deprecated-cds-features-cds-validate": "warn",
     },
   },
   {
@@ -24,15 +21,12 @@ export default defineConfig([
     ignores: ["package-lock.json"],
     plugins: {
       json,
-      cdsDeprecatedConfig,
+      "cds-deprecated-config": cdsDeprecatedConfig,
     },
     language: "json/json",
+    extends: [cdsDeprecatedConfig.configs.recommended],
     rules: {
       "json/no-duplicate-keys": "error",
-      "cdsDeprecatedConfig/no-deprecated-cds-fiori-draft-compat": "warn",
-      "cdsDeprecatedConfig/no-deprecated-cds-features-odata-new-adapter":
-        "warn",
-      "cdsDeprecatedConfig/no-deprecated-cds-features-cds-validate": "warn",
     },
   },
 ]);

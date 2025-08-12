@@ -11,9 +11,12 @@
 
 ## Libraries and Frameworks
 
-- ESLint.
-- ESLint JSON Language Plugin.
-- PNPM is the package manager.
+- Node.js
+- TypeScript
+- ESLint v9 with flat config: https://www.npmjs.com/package/eslint
+- ESLint JSON Language Plugin: https://www.npmjs.com/package/@eslint/json
+- PNPM is the package manager: https://www.npmjs.com/package/pnpm
+- Vitest is the test runner, test framework: https://www.npmjs.com/package/vitest
 
 ## Coding Standards
 
