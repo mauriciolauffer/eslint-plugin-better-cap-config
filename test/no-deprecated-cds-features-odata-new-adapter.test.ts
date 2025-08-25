@@ -1,4 +1,5 @@
 import { describe, it } from "vitest";
+import json from "@eslint/json";
 import { RuleTester } from "eslint";
 import plugin from "../src/index.js";
 
@@ -6,8 +7,9 @@ describe("no-deprecated-cds-features-odata-new-adapter rule", () => {
   const ruleTester = new RuleTester({
     plugins: {
       "cds-deprecated-config": plugin,
+      json,
     },
-    language: "cds-deprecated-config/json",
+    language: "json/json",
   });
 
   it("should pass for valid cases", () => {

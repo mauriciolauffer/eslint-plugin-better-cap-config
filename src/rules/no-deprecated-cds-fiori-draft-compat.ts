@@ -25,7 +25,7 @@ const rule: JSONRuleDefinition<{
         if (
           checkDeprecatedCdsPattern(context, node, {
             key: "draft_compat",
-            parentPath: "fiori",
+            parentKey: "fiori",
           })
         ) {
           context.report({

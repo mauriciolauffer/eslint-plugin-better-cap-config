@@ -1,22 +1,16 @@
-/**
- * @fileoverview ESLint plugin to detect deprecated CDS configuration patterns
- * @author mauriciolauffer
- */
-
 import type { ESLint } from "eslint";
-import {readFile} from "node:fs/promises";
-import { JSONLanguage } from "@eslint/json";
-// import pkg from "../package.json" with { type: "json" };
+import { readFile } from "node:fs/promises";
 import noDeprecatedCdsFioriDraftCompat from "./rules/no-deprecated-cds-fiori-draft-compat.js";
 import noDeprecatedCdsFeaturesOdataNewAdapter from "./rules/no-deprecated-cds-features-odata-new-adapter.js";
 import noDeprecatedCdsFeaturesCdsValidate from "./rules/no-deprecated-cds-features-cds-validate.js";
 
-const pkg = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
+const pkg = JSON.parse(
+  await readFile(new URL("../package.json", import.meta.url), "utf8"),
+);
 
 /**
  * Collection of all available rules in this plugin
  */
-
 const rules = {
   "no-deprecated-cds-fiori-draft-compat": noDeprecatedCdsFioriDraftCompat,
   "no-deprecated-cds-features-odata-new-adapter":
@@ -32,16 +26,12 @@ const plugin: ESLint.Plugin = {
     name: pkg.name,
     version: pkg.version,
   },
-  languages: {
-    json: new JSONLanguage({ mode: "json" }),
-  },
   rules,
   configs: {
     recommended: {
       plugins: {
         "cds-deprecated-config": null as unknown as ESLint.Plugin, // Placeholder, will be filled below
       },
-      language: "cds-deprecated-config/json",
       rules: {
         "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat": "error",
         "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter":
@@ -54,7 +44,7 @@ const plugin: ESLint.Plugin = {
 };
 
 // Fix circular reference after plugin is defined
-const recommendedConfig = plugin.configs!.recommended as Record<
+const recommendedConfig = plugin.configs?.recommended as Record<
   string,
   unknown
 >;

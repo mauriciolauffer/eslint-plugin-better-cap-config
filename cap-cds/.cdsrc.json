@@ -10,21 +10,7 @@
         "kind": "xsuaa"
       },
       "[development]": {
-        "kind": "mocked",
-        "users": {
-          "editor": {
-            "attr": {
-              "email": "editor@sap.com"
-            },
-            "roles": ["CloudCapabilityEditor"]
-          },
-          "viewer": {
-            "attr": {
-              "email": "viewer@sap.com"
-            },
-            "roles": ["CloudCapabilityViewer"]
-          }
-        }
+        "kind": "mocked"
       }
     },
     "db": {

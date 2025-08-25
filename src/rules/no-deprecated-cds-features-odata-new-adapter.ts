@@ -26,7 +26,7 @@ const rule: JSONRuleDefinition<{
         if (
           checkDeprecatedCdsPattern(context, node, {
             key: "odata_new_adapter",
-            parentPath: "features",
+            parentKey: "features",
             checkValue: true,
             deprecatedValue: false,
           })

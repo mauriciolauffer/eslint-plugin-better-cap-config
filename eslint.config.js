@@ -1,23 +1,18 @@
-import { defineConfig } from "eslint/config";
-import json from "@eslint/json";
+import tseslint from "typescript-eslint";
+import eslintPlugin from "eslint-plugin-eslint-plugin";
+import node from "eslint-config-mlauffer-nodejs";
 
-export default defineConfig([
-  // JSON files (basic validation)
+export default tseslint.config([
   {
-    files: ["**/*.json"],
-    ignores: [
-      "node_modules/**",
-      "package-lock.json",
-      "pnpm-lock.yaml",
-      "dist/**",
-      "coverage/**",
-    ],
-    plugins: {
-      json,
-    },
-    language: "json/json",
+    ignores: ["dist/", "coverage/", "docs/", "test/"],
+  },
+  {
+    extends: [node, eslintPlugin.configs.recommended, tseslint.configs.strict],
     rules: {
-      "json/no-duplicate-keys": "error",
+      "jsdoc/require-param": "off",
+      "jsdoc/require-returns": "off",
+      "sonarjs/todo-tag": "warn",
+      "sonarjs/no-skipped-tests": "warn",
     },
   },
 ]);

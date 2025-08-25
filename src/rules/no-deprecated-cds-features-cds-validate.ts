@@ -26,7 +26,7 @@ const rule: JSONRuleDefinition<{
         if (
           checkDeprecatedCdsPattern(context, node, {
             key: "cds_validate",
-            parentPath: "features",
+            parentKey: "features",
             checkValue: true,
             deprecatedValue: false,
           })

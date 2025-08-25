@@ -6,23 +6,18 @@ describe("eslint-plugin-cds-deprecated-config", () => {
     expect(plugin).toBeTruthy();
     expect(plugin.meta).toBeTruthy();
     expect(plugin.rules).toBeTruthy();
-    expect(plugin.languages).toBeTruthy();
     expect(plugin.configs).toBeTruthy();
   });
 
   it("should have correct meta information", () => {
-    expect(plugin.meta!.name).toBe("eslint-plugin-cds-deprecated-config");
-    expect(plugin.meta!.version).toBe("0.0.1");
-  });
-
-  it("should have JSON language support", () => {
-    expect(plugin.languages!.json).toBeTruthy();
+    expect(plugin.meta?.name).toBe("eslint-plugin-cds-deprecated-config");
+    expect(plugin.meta?.version).toBe("0.0.1");
   });
 
   it("should have circular reference resolved in configs", () => {
-    expect((plugin.configs!.recommended as any).plugins).toBeTruthy();
+    expect((plugin.configs?.recommended as any).plugins).toBeTruthy();
     expect(
-      (plugin.configs!.recommended as any).plugins["cds-deprecated-config"],
+      (plugin.configs?.recommended as any).plugins["cds-deprecated-config"],
     ).toBe(plugin);
   });
 });
