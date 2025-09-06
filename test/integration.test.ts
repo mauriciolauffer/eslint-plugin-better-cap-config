@@ -132,15 +132,11 @@ describe("integration tests", () => {
     expect(results[0].warningCount).toBe(0);
 
     const ruleIds = results[0].messages.map((m) => m.ruleId);
-    expect(
-      ruleIds.includes("cap-config/cds-features-odata-new-adapter"),
-    ).toBe(true);
-    expect(
-      ruleIds.includes("cap-config/cds-features-cds-validate"),
-    ).toBe(true);
-    expect(
-      ruleIds.includes("cap-config/cds-fiori-draft-compat"),
-    ).toBe(true);
+    expect(ruleIds.includes("cap-config/cds-features-odata-new-adapter")).toBe(
+      true,
+    );
+    expect(ruleIds.includes("cap-config/cds-features-cds-validate")).toBe(true);
+    expect(ruleIds.includes("cap-config/cds-fiori-draft-compat")).toBe(true);
   });
 
   it("should not report errors for valid configurations", async () => {
@@ -221,12 +217,10 @@ describe("integration tests", () => {
     expect(results[0].warningCount).toBe(0);
 
     const ruleIds = results[0].messages.map((m) => m.ruleId);
-    expect(
-      ruleIds.includes("cap-config/cds-features-odata-new-adapter"),
-    ).toBe(true);
-    expect(
-      ruleIds.includes("cap-config/cds-fiori-draft-compat"),
-    ).toBe(true);
+    expect(ruleIds.includes("cap-config/cds-features-odata-new-adapter")).toBe(
+      true,
+    );
+    expect(ruleIds.includes("cap-config/cds-fiori-draft-compat")).toBe(true);
   });
 
   it("should handle .cdsrc files correctly", async () => {
@@ -269,11 +263,7 @@ describe("integration tests", () => {
     expect(results[0].warningCount).toBe(0);
 
     const ruleIds = results[0].messages.map((m) => m.ruleId);
-    expect(
-      ruleIds.includes("cap-config/cds-features-cds-validate"),
-    ).toBe(true);
-    expect(
-      ruleIds.includes("cap-config/cds-fiori-draft-compat"),
-    ).toBe(true);
+    expect(ruleIds.includes("cap-config/cds-features-cds-validate")).toBe(true);
+    expect(ruleIds.includes("cap-config/cds-fiori-draft-compat")).toBe(true);
   });
 });

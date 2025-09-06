@@ -46,8 +46,7 @@ const recommendedConfig = plugin.configs?.recommended as Record<
   string,
   unknown
 >;
-(recommendedConfig.plugins as Record<string, ESLint.Plugin>)[
-  "cap-config"
-] = plugin;
+(recommendedConfig.plugins as Record<string, ESLint.Plugin>)["cap-config"] =
+  plugin;
 
 export default plugin;
