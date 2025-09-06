@@ -30,12 +30,12 @@ const plugin: ESLint.Plugin = {
   configs: {
     recommended: {
       plugins: {
-        "cds-deprecated-config": null as unknown as ESLint.Plugin, // Placeholder, will be filled below
+        "cap-config": null as unknown as ESLint.Plugin, // Placeholder, will be filled below
       },
       rules: {
-        "cds-deprecated-config/cds-fiori-draft-compat": "error",
-        "cds-deprecated-config/cds-features-odata-new-adapter": "error",
-        "cds-deprecated-config/cds-features-cds-validate": "error",
+        "cap-config/cds-fiori-draft-compat": "error",
+        "cap-config/cds-features-odata-new-adapter": "error",
+        "cap-config/cds-features-cds-validate": "error",
       },
     },
   },
@@ -47,7 +47,7 @@ const recommendedConfig = plugin.configs?.recommended as Record<
   unknown
 >;
 (recommendedConfig.plugins as Record<string, ESLint.Plugin>)[
-  "cds-deprecated-config"
+  "cap-config"
 ] = plugin;
 
 export default plugin;

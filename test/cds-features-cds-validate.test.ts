@@ -6,7 +6,7 @@ import plugin from "../src/index.js";
 describe("cds-features-cds-validate rule", () => {
   const ruleTester = new RuleTester({
     plugins: {
-      "cds-deprecated-config": plugin,
+      "cap-config": plugin,
       json,
     },
     language: "json/json",

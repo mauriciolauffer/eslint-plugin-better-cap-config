@@ -116,13 +116,13 @@ export default [
   {
     files: ["**/*.json"],
     plugins: {
-      "cds-deprecated-config": cdsDeprecatedConfig,
+      "cap-config": cdsDeprecatedConfig,
     },
-    language: "cds-deprecated-config/json",
+    language: "cap-config/json",
     rules: {
-      "cds-deprecated-config/cds-fiori-draft-compat": "error",
-      "cds-deprecated-config/cds-features-odata-new-adapter": "error",
-      "cds-deprecated-config/cds-features-cds-validate": "error",
+      "cap-config/cds-fiori-draft-compat": "error",
+      "cap-config/cds-features-odata-new-adapter": "error",
+      "cap-config/cds-features-cds-validate": "error",
     },
   },
 ];

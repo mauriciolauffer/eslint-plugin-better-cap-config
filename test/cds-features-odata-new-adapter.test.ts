@@ -6,7 +6,7 @@ import plugin from "../src/index.js";
 describe("cds-features-odata-new-adapter rule", () => {
   const ruleTester = new RuleTester({
     plugins: {
-      "cds-deprecated-config": plugin,
+      "cap-config": plugin,
       json,
     },
     language: "json/json",
