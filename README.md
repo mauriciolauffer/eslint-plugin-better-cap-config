@@ -19,7 +19,7 @@ npm install --save-dev eslint eslint-plugin-better-cap-config
 
 ## Rules
 
-### `no-deprecated-cds-fiori-draft-compat`
+### `cds-fiori-draft-compat`
 
 Disallows the deprecated `cds.fiori.draft_compat` configuration.
 
@@ -120,9 +120,8 @@ export default [
     },
     language: "cds-deprecated-config/json",
     rules: {
-      "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat": "error",
-      "cds-deprecated-config/cds-features-odata-new-adapter":
-        "error",
+      "cds-deprecated-config/cds-fiori-draft-compat": "error",
+      "cds-deprecated-config/cds-features-odata-new-adapter": "error",
       "cds-deprecated-config/cds-features-cds-validate": "error",
     },
   },

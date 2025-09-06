@@ -10,7 +10,7 @@ const rule: JSONRuleDefinition<{
     docs: {
       recommended: true,
       description: "Disallow deprecated cds.fiori.draft_compat configuration",
-      url: "https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/docs/rules/no-deprecated-cds-fiori-draft-compat.md",
+      url: "https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/docs/rules/cds-fiori-draft-compat.md",
     },
     messages: {
       deprecatedCdsFioriDraftCompat:

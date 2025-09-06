@@ -1,4 +1,4 @@
-# no-deprecated-cds-fiori-draft-compat
+# cds-fiori-draft-compat
 
 Disallow the use of the deprecated `cds.fiori.draft_compat` configuration key in JSON files.
 

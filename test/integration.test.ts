@@ -16,8 +16,7 @@ describe("integration tests", () => {
           },
           language: "json/json",
           rules: {
-            "cds-deprecated-config/cds-features-odata-new-adapter":
-              "warn",
+            "cds-deprecated-config/cds-features-odata-new-adapter": "warn",
           },
         },
       ],
@@ -49,8 +48,7 @@ describe("integration tests", () => {
           },
           language: "json/json",
           rules: {
-            "cds-deprecated-config/cds-features-cds-validate":
-              "error",
+            "cds-deprecated-config/cds-features-cds-validate": "error",
           },
         },
       ],
@@ -81,8 +79,7 @@ describe("integration tests", () => {
           },
           language: "json/json",
           rules: {
-            "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat":
-              "error",
+            "cds-deprecated-config/cds-fiori-draft-compat": "error",
           },
         },
       ],
@@ -98,18 +95,16 @@ describe("integration tests", () => {
     expect(results[0].errorCount).toBe(1);
     expect(results[0].warningCount).toBe(0);
     expect(results[0].messages[0].ruleId).toStrictEqual(
-      "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat",
+      "cds-deprecated-config/cds-fiori-draft-compat",
     );
   });
 
   it.skip("should work with recommended config", async () => {
     const recommendedConfig = {
       rules: {
-        "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat": "error",
-        "cds-deprecated-config/cds-features-odata-new-adapter":
-          "error",
-        "cds-deprecated-config/cds-features-cds-validate":
-          "error",
+        "cds-deprecated-config/cds-fiori-draft-compat": "error",
+        "cds-deprecated-config/cds-features-odata-new-adapter": "error",
+        "cds-deprecated-config/cds-features-cds-validate": "error",
       },
     };
 
@@ -138,19 +133,13 @@ describe("integration tests", () => {
 
     const ruleIds = results[0].messages.map((m) => m.ruleId);
     expect(
-      ruleIds.includes(
-        "cds-deprecated-config/cds-features-odata-new-adapter",
-      ),
+      ruleIds.includes("cds-deprecated-config/cds-features-odata-new-adapter"),
     ).toBe(true);
     expect(
-      ruleIds.includes(
-        "cds-deprecated-config/cds-features-cds-validate",
-      ),
+      ruleIds.includes("cds-deprecated-config/cds-features-cds-validate"),
     ).toBe(true);
     expect(
-      ruleIds.includes(
-        "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat",
-      ),
+      ruleIds.includes("cds-deprecated-config/cds-fiori-draft-compat"),
     ).toBe(true);
   });
 
@@ -166,12 +155,9 @@ describe("integration tests", () => {
           },
           language: "json/json",
           rules: {
-            "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat":
-              "error",
-            "cds-deprecated-config/cds-features-odata-new-adapter":
-              "error",
-            "cds-deprecated-config/cds-features-cds-validate":
-              "error",
+            "cds-deprecated-config/cds-fiori-draft-compat": "error",
+            "cds-deprecated-config/cds-features-odata-new-adapter": "error",
+            "cds-deprecated-config/cds-features-cds-validate": "error",
           },
         } as any,
       ],
@@ -200,12 +186,9 @@ describe("integration tests", () => {
           },
           language: "json/json",
           rules: {
-            "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat":
-              "error",
-            "cds-deprecated-config/cds-features-odata-new-adapter":
-              "error",
-            "cds-deprecated-config/cds-features-cds-validate":
-              "error",
+            "cds-deprecated-config/cds-fiori-draft-compat": "error",
+            "cds-deprecated-config/cds-features-odata-new-adapter": "error",
+            "cds-deprecated-config/cds-features-cds-validate": "error",
           },
         } as any,
       ],
@@ -239,14 +222,10 @@ describe("integration tests", () => {
 
     const ruleIds = results[0].messages.map((m) => m.ruleId);
     expect(
-      ruleIds.includes(
-        "cds-deprecated-config/cds-features-odata-new-adapter",
-      ),
+      ruleIds.includes("cds-deprecated-config/cds-features-odata-new-adapter"),
     ).toBe(true);
     expect(
-      ruleIds.includes(
-        "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat",
-      ),
+      ruleIds.includes("cds-deprecated-config/cds-fiori-draft-compat"),
     ).toBe(true);
   });
 
@@ -262,12 +241,9 @@ describe("integration tests", () => {
           },
           language: "json/json",
           rules: {
-            "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat":
-              "error",
-            "cds-deprecated-config/cds-features-odata-new-adapter":
-              "error",
-            "cds-deprecated-config/cds-features-cds-validate":
-              "error",
+            "cds-deprecated-config/cds-fiori-draft-compat": "error",
+            "cds-deprecated-config/cds-features-odata-new-adapter": "error",
+            "cds-deprecated-config/cds-features-cds-validate": "error",
           },
         } as any,
       ],
@@ -294,14 +270,10 @@ describe("integration tests", () => {
 
     const ruleIds = results[0].messages.map((m) => m.ruleId);
     expect(
-      ruleIds.includes(
-        "cds-deprecated-config/cds-features-cds-validate",
-      ),
+      ruleIds.includes("cds-deprecated-config/cds-features-cds-validate"),
     ).toBe(true);
     expect(
-      ruleIds.includes(
-        "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat",
-      ),
+      ruleIds.includes("cds-deprecated-config/cds-fiori-draft-compat"),
     ).toBe(true);
   });
 });

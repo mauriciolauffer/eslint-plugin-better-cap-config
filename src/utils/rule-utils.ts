@@ -74,7 +74,6 @@ export function checkDeprecatedCdsPattern(
     return false;
   }
 
-  // eslint-disable-next-line sonarjs/prefer-single-boolean-return
   if (pattern.checkValue && !isDeprecatedValue(node, pattern.deprecatedValue)) {
     return false;
   }

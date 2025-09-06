@@ -1,7 +1,7 @@
 import type { ESLint } from "eslint";
 import { readFile } from "node:fs/promises";
-import noDeprecatedCdsFioriDraftCompat from "./rules/no-deprecated-cds-fiori-draft-compat.js";
-import noDeprecatedCdsFeaturesOdataNewAdapter from "./rules/cds-features-odata-new-adapter.js";
+import cdsFioriDraftCompat from "./rules/cds-fiori-draft-compat.js";
+import cdsFeaturesOdataNewAdapter from "./rules/cds-features-odata-new-adapter.js";
 import cdsFeaturesCdsValidate from "./rules/cds-features-cds-validate.js";
 
 const pkg = JSON.parse(
@@ -13,9 +13,8 @@ const pkg = JSON.parse(
  * Collection of all available rules in this plugin
  */
 const rules = {
-  "no-deprecated-cds-fiori-draft-compat": noDeprecatedCdsFioriDraftCompat,
-  "cds-features-odata-new-adapter":
-    noDeprecatedCdsFeaturesOdataNewAdapter,
+  "cds-fiori-draft-compat": cdsFioriDraftCompat,
+  "cds-features-odata-new-adapter": cdsFeaturesOdataNewAdapter,
   "cds-features-cds-validate": cdsFeaturesCdsValidate,
 };
 
@@ -34,11 +33,9 @@ const plugin: ESLint.Plugin = {
         "cds-deprecated-config": null as unknown as ESLint.Plugin, // Placeholder, will be filled below
       },
       rules: {
-        "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat": "error",
-        "cds-deprecated-config/cds-features-odata-new-adapter":
-          "error",
-        "cds-deprecated-config/cds-features-cds-validate":
-          "error",
+        "cds-deprecated-config/cds-fiori-draft-compat": "error",
+        "cds-deprecated-config/cds-features-odata-new-adapter": "error",
+        "cds-deprecated-config/cds-features-cds-validate": "error",
       },
     },
   },

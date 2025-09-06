@@ -3,7 +3,7 @@ import json from "@eslint/json";
 import { RuleTester } from "eslint";
 import plugin from "../src/index.js";
 
-describe("no-deprecated-cds-fiori-draft-compat rule", () => {
+describe("cds-fiori-draft-compat rule", () => {
   const ruleTester = new RuleTester({
     plugins: {
       "cds-deprecated-config": plugin,
@@ -14,8 +14,8 @@ describe("no-deprecated-cds-fiori-draft-compat rule", () => {
 
   it("should pass for valid cases", () => {
     ruleTester.run(
-      "no-deprecated-cds-fiori-draft-compat",
-      plugin.rules!["no-deprecated-cds-fiori-draft-compat"],
+      "cds-fiori-draft-compat",
+      plugin.rules!["cds-fiori-draft-compat"],
       {
         valid: [
           // Case 1: No cds key at all
@@ -61,8 +61,8 @@ describe("no-deprecated-cds-fiori-draft-compat rule", () => {
 
   it("should fail when cds.fiori.draft_compat is present", () => {
     ruleTester.run(
-      "no-deprecated-cds-fiori-draft-compat",
-      plugin.rules!["no-deprecated-cds-fiori-draft-compat"],
+      "cds-fiori-draft-compat",
+      plugin.rules!["cds-fiori-draft-compat"],
       {
         valid: [],
         invalid: [
