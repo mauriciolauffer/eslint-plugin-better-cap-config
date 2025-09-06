@@ -3,7 +3,7 @@ import json from "@eslint/json";
 import { RuleTester } from "eslint";
 import plugin from "../src/index.js";
 
-describe("no-deprecated-cds-features-odata-new-adapter rule", () => {
+describe("cds-features-odata-new-adapter rule", () => {
   const ruleTester = new RuleTester({
     plugins: {
       "cds-deprecated-config": plugin,
@@ -14,8 +14,8 @@ describe("no-deprecated-cds-features-odata-new-adapter rule", () => {
 
   it("should pass for valid cases", () => {
     ruleTester.run(
-      "no-deprecated-cds-features-odata-new-adapter",
-      plugin.rules!["no-deprecated-cds-features-odata-new-adapter"],
+      "cds-features-odata-new-adapter",
+      plugin.rules!["cds-features-odata-new-adapter"],
       {
         valid: [
           // Case 1: No cds key at all
@@ -71,8 +71,8 @@ describe("no-deprecated-cds-features-odata-new-adapter rule", () => {
 
   it("should fail when cds.features.odata_new_adapter is false", () => {
     ruleTester.run(
-      "no-deprecated-cds-features-odata-new-adapter",
-      plugin.rules!["no-deprecated-cds-features-odata-new-adapter"],
+      "cds-features-odata-new-adapter",
+      plugin.rules!["cds-features-odata-new-adapter"],
       {
         valid: [],
         invalid: [

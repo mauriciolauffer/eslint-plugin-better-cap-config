@@ -11,7 +11,7 @@ const rule: JSONRuleDefinition<{
       recommended: true,
       description:
         "Disallow deprecated cds.features.odata_new_adapter configuration",
-      url: "https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/docs/rules/no-deprecated-cds-features-odata-new-adapter.md",
+      url: "https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/docs/rules/cds-features-odata-new-adapter.md",
     },
     messages: {
       deprecatedCdsFeaturesOdataNewAdapter:

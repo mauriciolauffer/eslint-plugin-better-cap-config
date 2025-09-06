@@ -47,7 +47,7 @@ Disallows the deprecated `cds.fiori.draft_compat` configuration.
 }
 ```
 
-### `no-deprecated-cds-features-odata-new-adapter`
+### `cds-features-odata-new-adapter`
 
 Disallows setting `cds.features.odata_new_adapter` to `false` (deprecated behavior).
 
@@ -121,7 +121,7 @@ export default [
     language: "cds-deprecated-config/json",
     rules: {
       "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat": "error",
-      "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter":
+      "cds-deprecated-config/cds-features-odata-new-adapter":
         "error",
       "cds-deprecated-config/cds-features-cds-validate": "error",
     },

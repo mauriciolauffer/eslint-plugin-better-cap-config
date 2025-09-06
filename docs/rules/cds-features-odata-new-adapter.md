@@ -1,4 +1,4 @@
-# no-deprecated-cds-features-odata-new-adapter
+# cds-features-odata-new-adapter
 
 Disallow deprecated `cds.features.odata_new_adapter` configuration.
 

@@ -16,7 +16,7 @@ describe("integration tests", () => {
           },
           language: "json/json",
           rules: {
-            "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter":
+            "cds-deprecated-config/cds-features-odata-new-adapter":
               "warn",
           },
         },
@@ -33,7 +33,7 @@ describe("integration tests", () => {
     expect(results[0].errorCount).toBe(0);
     expect(results[0].warningCount).toBe(1);
     expect(results[0].messages[0].ruleId).toBe(
-      "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter",
+      "cds-deprecated-config/cds-features-odata-new-adapter",
     );
   });
 
@@ -106,7 +106,7 @@ describe("integration tests", () => {
     const recommendedConfig = {
       rules: {
         "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat": "error",
-        "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter":
+        "cds-deprecated-config/cds-features-odata-new-adapter":
           "error",
         "cds-deprecated-config/cds-features-cds-validate":
           "error",
@@ -139,7 +139,7 @@ describe("integration tests", () => {
     const ruleIds = results[0].messages.map((m) => m.ruleId);
     expect(
       ruleIds.includes(
-        "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter",
+        "cds-deprecated-config/cds-features-odata-new-adapter",
       ),
     ).toBe(true);
     expect(
@@ -168,7 +168,7 @@ describe("integration tests", () => {
           rules: {
             "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat":
               "error",
-            "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter":
+            "cds-deprecated-config/cds-features-odata-new-adapter":
               "error",
             "cds-deprecated-config/cds-features-cds-validate":
               "error",
@@ -202,7 +202,7 @@ describe("integration tests", () => {
           rules: {
             "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat":
               "error",
-            "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter":
+            "cds-deprecated-config/cds-features-odata-new-adapter":
               "error",
             "cds-deprecated-config/cds-features-cds-validate":
               "error",
@@ -240,7 +240,7 @@ describe("integration tests", () => {
     const ruleIds = results[0].messages.map((m) => m.ruleId);
     expect(
       ruleIds.includes(
-        "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter",
+        "cds-deprecated-config/cds-features-odata-new-adapter",
       ),
     ).toBe(true);
     expect(
@@ -264,7 +264,7 @@ describe("integration tests", () => {
           rules: {
             "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat":
               "error",
-            "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter":
+            "cds-deprecated-config/cds-features-odata-new-adapter":
               "error",
             "cds-deprecated-config/cds-features-cds-validate":
               "error",
