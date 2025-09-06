@@ -3,7 +3,7 @@ import json from "@eslint/json";
 import { RuleTester } from "eslint";
 import plugin from "../src/index.js";
 
-describe("no-deprecated-cds-features-cds-validate rule", () => {
+describe("cds-features-cds-validate rule", () => {
   const ruleTester = new RuleTester({
     plugins: {
       "cds-deprecated-config": plugin,
@@ -14,8 +14,8 @@ describe("no-deprecated-cds-features-cds-validate rule", () => {
 
   it("should pass for valid cases", () => {
     ruleTester.run(
-      "no-deprecated-cds-features-cds-validate",
-      plugin.rules!["no-deprecated-cds-features-cds-validate"],
+      "cds-features-cds-validate",
+      plugin.rules!["cds-features-cds-validate"],
       {
         valid: [
           // Case 1: No cds key at all
@@ -71,8 +71,8 @@ describe("no-deprecated-cds-features-cds-validate rule", () => {
 
   it("should fail when cds.features.cds_validate is false", () => {
     ruleTester.run(
-      "no-deprecated-cds-features-cds-validate",
-      plugin.rules!["no-deprecated-cds-features-cds-validate"],
+      "cds-features-cds-validate",
+      plugin.rules!["cds-features-cds-validate"],
       {
         valid: [],
         invalid: [

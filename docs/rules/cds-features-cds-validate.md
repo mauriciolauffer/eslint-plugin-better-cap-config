@@ -1,4 +1,4 @@
-# no-deprecated-cds-features-cds-validate
+# cds-features-cds-validate
 
 Disallow deprecated `cds.features.cds_validate` configuration.
 

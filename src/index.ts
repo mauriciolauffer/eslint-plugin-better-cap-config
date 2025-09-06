@@ -2,7 +2,7 @@ import type { ESLint } from "eslint";
 import { readFile } from "node:fs/promises";
 import noDeprecatedCdsFioriDraftCompat from "./rules/no-deprecated-cds-fiori-draft-compat.js";
 import noDeprecatedCdsFeaturesOdataNewAdapter from "./rules/no-deprecated-cds-features-odata-new-adapter.js";
-import noDeprecatedCdsFeaturesCdsValidate from "./rules/no-deprecated-cds-features-cds-validate.js";
+import cdsFeaturesCdsValidate from "./rules/cds-features-cds-validate.js";
 
 const pkg = JSON.parse(
   // eslint-disable-next-line security/detect-non-literal-fs-filename
@@ -16,7 +16,7 @@ const rules = {
   "no-deprecated-cds-fiori-draft-compat": noDeprecatedCdsFioriDraftCompat,
   "no-deprecated-cds-features-odata-new-adapter":
     noDeprecatedCdsFeaturesOdataNewAdapter,
-  "no-deprecated-cds-features-cds-validate": noDeprecatedCdsFeaturesCdsValidate,
+  "cds-features-cds-validate": cdsFeaturesCdsValidate,
 };
 
 /**
@@ -37,7 +37,7 @@ const plugin: ESLint.Plugin = {
         "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat": "error",
         "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter":
           "error",
-        "cds-deprecated-config/no-deprecated-cds-features-cds-validate":
+        "cds-deprecated-config/cds-features-cds-validate":
           "error",
       },
     },

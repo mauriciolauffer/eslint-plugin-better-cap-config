@@ -75,7 +75,7 @@ Disallows setting `cds.features.odata_new_adapter` to `false` (deprecated behavi
 }
 ```
 
-### `no-deprecated-cds-features-cds-validate`
+### `cds-features-cds-validate`
 
 Disallows setting `cds.features.cds_validate` to `false` (deprecated behavior).
 
@@ -123,7 +123,7 @@ export default [
       "cds-deprecated-config/no-deprecated-cds-fiori-draft-compat": "error",
       "cds-deprecated-config/no-deprecated-cds-features-odata-new-adapter":
         "error",
-      "cds-deprecated-config/no-deprecated-cds-features-cds-validate": "error",
+      "cds-deprecated-config/cds-features-cds-validate": "error",
     },
   },
 ];
