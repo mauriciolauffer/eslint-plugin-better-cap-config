@@ -31,6 +31,7 @@
     "test:lint:json": "eslint -c eslint.json-test.config.js",
     "lint": "eslint --cache && prettier . --check --cache",
     "lint:fix": "eslint --cache --fix && prettier . --write",
+    "lint:ci": "eslint --quiet -f @microsoft/eslint-formatter-sarif -o eslint.sarif",
     "lint:json:stats": "SET TIMING=all && eslint -c eslint.json-test.config.js"
   },
   "devDependencies": {

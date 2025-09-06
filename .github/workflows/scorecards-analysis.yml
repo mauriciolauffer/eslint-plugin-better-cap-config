@@ -1,0 +1,22 @@
+name: Scorecards supply-chain security
+on:
+  # Only the default branch is supported.
+  branch_protection_rule:
+  schedule:
+    - cron: "10 5 * * 1"
+  push:
+    branches: [main]
+
+# Declare default permissions as read only.
+permissions: read-all
+
+jobs:
+  analysis:
+    permissions:
+      # Needed to upload the results to code-scanning dashboard.
+      security-events: write
+      # Used to receive a badge. (Upcoming feature)
+      id-token: write
+    uses: mauriciolauffer/.github/.github/workflows/scorecards-analysis.yml@main
+    secrets:
+      SCORECARD_READ_TOKEN: ${{ secrets.SCORECARD_READ_TOKEN }}
