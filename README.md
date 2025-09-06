@@ -1,9 +1,9 @@
-# ESLint Plugin CDS Deprecated Config
+# ESLint Plugin Better CAP Config
 
 [![npm version](https://badge.fury.io/js/eslint-plugin-better-cap-config.svg)](https://badge.fury.io/js/eslint-plugin-better-cap-config)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
-An ESLint plugin for detecting deprecated SAP CAP CDS (Cloud Application Programming) configuration patterns in JSON files.
+An ESLint plugin for improving SAP CAP (Cloud Application Programming Model) configuration patterns in JSON files.
 
 ## Features
 
@@ -14,7 +14,7 @@ An ESLint plugin for detecting deprecated SAP CAP CDS (Cloud Application Program
 ## Installation
 
 ```bash
-npm install --save-dev eslint eslint-plugin-better-cap-config
+npm install --save-dev eslint  @eslintjson  eslint-plugin-better-cap-config
 ```
 
 ## Rules
@@ -110,12 +110,14 @@ Add the plugin to your ESLint configuration:
 ### ESLint v9+ (Flat Config)
 
 ```javascript
+import json from "@eslint/json";
 import capConfig from "eslint-plugin-better-cap-config";
 
 export default [
   {
     files: ["**/*.json"],
     plugins: {
+      json,
       "cap-config": capConfig,
     },
     language: "json/json",
@@ -154,12 +156,6 @@ This plugin requires:
 - ESLint v9.0.0 or higher
 - Node.js v18.0.0 or higher
 - `@eslint/json` for JSON language support
-
-Install the required dependencies:
-
-```bash
-npm install --save-dev eslint @eslint/json
-```
 
 ## Supported Files
 
