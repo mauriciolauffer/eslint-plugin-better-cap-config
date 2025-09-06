@@ -1,6 +1,6 @@
 import { defineConfig } from "eslint/config";
 import json from "@eslint/json";
-import cdsDeprecatedConfig from "./dist/index.js";
+import capConfig from "./dist/index.js";
 
 export default defineConfig([
   {
@@ -13,6 +13,6 @@ export default defineConfig([
       json,
     },
     language: "json/json",
-    extends: [cdsDeprecatedConfig.configs.recommended],
+    extends: [capConfig.configs.recommended],
   },
 ]);

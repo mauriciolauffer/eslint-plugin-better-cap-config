@@ -110,15 +110,15 @@ Add the plugin to your ESLint configuration:
 ### ESLint v9+ (Flat Config)
 
 ```javascript
-import cdsDeprecatedConfig from "eslint-plugin-better-cap-config";
+import capConfig from "eslint-plugin-better-cap-config";
 
 export default [
   {
     files: ["**/*.json"],
     plugins: {
-      "cap-config": cdsDeprecatedConfig,
+      "cap-config": capConfig,
     },
-    language: "cap-config/json",
+    language: "json/json",
     rules: {
       "cap-config/cds-fiori-draft-compat": "error",
       "cap-config/cds-features-odata-new-adapter": "error",
@@ -131,14 +131,20 @@ export default [
 ### Using the Recommended Configuration
 
 ```javascript
-import cdsDeprecatedConfig from "eslint-plugin-better-cap-config";
+import { defineConfig } from "eslint/config";
+import json from "@eslint/json";
+import capConfig from "eslint-plugin-better-cap-config";
 
-export default [
+export default defineConfig([
   {
     files: ["**/*.json"],
-    ...cdsDeprecatedConfig.configs.recommended,
+    plugins: {
+      json,
+    },
+    language: "json/json",
+    extends: [capConfig.configs.recommended],
   },
-];
+]);
 ```
 
 ## Prerequisites
