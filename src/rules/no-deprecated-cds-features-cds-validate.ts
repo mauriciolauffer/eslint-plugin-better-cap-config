@@ -11,7 +11,7 @@ const rule: JSONRuleDefinition<{
       recommended: true,
       description:
         "Disallow deprecated cds.features.cds_validate configuration",
-      url: "https://github.com/mauriciolauffer/eslint-plugin-cds-deprecated-config/docs/rules/no-deprecated-cds-features-cds-validate.md",
+      url: "https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/docs/rules/no-deprecated-cds-features-cds-validate.md",
     },
     messages: {
       deprecatedCdsFeaturesCdsValidate:

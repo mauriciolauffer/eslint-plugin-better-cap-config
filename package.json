@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-cds-deprecated-config",
+  "name": "eslint-plugin-better-cap-config",
   "version": "0.0.1",
   "description": "ESLint plugin to detect deprecated SAP CAP configurations",
   "keywords": [
@@ -13,7 +13,7 @@
   ],
   "author": "Mauricio Lauffer",
   "license": "MIT",
-  "homepage": "https://github.com/mauriciolauffer/eslint-plugin-cds-deprecated-config#readme",
+  "homepage": "https://github.com/mauriciolauffer/eslint-plugin-better-cap-config#readme",
   "packageManager": "pnpm@10.12.1",
   "type": "module",
   "main": "dist/index.js",
@@ -36,15 +36,15 @@
   "devDependencies": {
     "@humanwhocodes/momoa": "^3.3.9",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^22.18.0",
+    "@types/node": "^22.18.1",
     "@vitest/coverage-v8": "3.2.4",
     "@vitest/ui": "^3.2.4",
-    "eslint": "^9.34.0",
+    "eslint": "^9.35.0",
     "eslint-config-mlauffer-nodejs": "^3.1.0",
     "eslint-plugin-eslint-plugin": "^7.0.0",
     "prettier": "^3.6.2",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.40.0",
+    "typescript-eslint": "^8.42.0",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
@@ -53,9 +53,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mauriciolauffer/eslint-plugin-cds-deprecated-config.git"
+    "url": "https://github.com/mauriciolauffer/eslint-plugin-better-cap-config.git"
   },
   "bugs": {
-    "url": "https://github.com/mauriciolauffer/eslint-plugin-cds-deprecated-config/issues"
+    "url": "https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/issues"
   }
 }

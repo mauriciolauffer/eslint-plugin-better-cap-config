@@ -1,6 +1,6 @@
 # ESLint Plugin CDS Deprecated Config
 
-[![npm version](https://badge.fury.io/js/eslint-plugin-cds-deprecated-config.svg)](https://badge.fury.io/js/eslint-plugin-cds-deprecated-config)
+[![npm version](https://badge.fury.io/js/eslint-plugin-better-cap-config.svg)](https://badge.fury.io/js/eslint-plugin-better-cap-config)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 An ESLint plugin for detecting deprecated SAP CAP CDS (Cloud Application Programming) configuration patterns in JSON files.
@@ -14,7 +14,7 @@ An ESLint plugin for detecting deprecated SAP CAP CDS (Cloud Application Program
 ## Installation
 
 ```bash
-npm install --save-dev eslint eslint-plugin-cds-deprecated-config
+npm install --save-dev eslint eslint-plugin-better-cap-config
 ```
 
 ## Rules
@@ -110,7 +110,7 @@ Add the plugin to your ESLint configuration:
 ### ESLint v9+ (Flat Config)
 
 ```javascript
-import cdsDeprecatedConfig from "eslint-plugin-cds-deprecated-config";
+import cdsDeprecatedConfig from "eslint-plugin-better-cap-config";
 
 export default [
   {
@@ -132,7 +132,7 @@ export default [
 ### Using the Recommended Configuration
 
 ```javascript
-import cdsDeprecatedConfig from "eslint-plugin-cds-deprecated-config";
+import cdsDeprecatedConfig from "eslint-plugin-better-cap-config";
 
 export default [
   {

@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial release of eslint-plugin-cds-deprecated-config
+- Initial release of eslint-plugin-better-cap-config
 - Rule: `no-deprecated-cds-fiori-draft-compat`
 - Rule: `no-deprecated-cds-features-odata-new-adapter`
 - Rule: `no-deprecated-cds-features-cds-validate`

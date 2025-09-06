@@ -1,6 +1,6 @@
 # Project Overview
 
-`eslint-plugin-cds-deprecated-config` is an ESLint plugin with rules to capture the usage of SAP CAP Node.js deprecated configurations in JSON files.
+`eslint-plugin-better-cap-config` is an ESLint plugin with rules to capture the usage of SAP CAP Node.js deprecated configurations in JSON files.
 
 ## Folder Structure
 

@@ -5,6 +5,7 @@ import noDeprecatedCdsFeaturesOdataNewAdapter from "./rules/no-deprecated-cds-fe
 import noDeprecatedCdsFeaturesCdsValidate from "./rules/no-deprecated-cds-features-cds-validate.js";
 
 const pkg = JSON.parse(
+  // eslint-disable-next-line security/detect-non-literal-fs-filename
   await readFile(new URL("../package.json", import.meta.url), "utf8"),
 );
 
