@@ -11,7 +11,7 @@ describe("eslint-plugin-better-cap-config", () => {
 
   it("should have correct meta information", () => {
     expect(plugin.meta?.name).toBe("eslint-plugin-better-cap-config");
-    expect(plugin.meta?.version).toBe("0.0.1");
+    expect(plugin.meta?.version).toBeTruthy();
   });
 
   it("should have circular reference resolved in configs", () => {

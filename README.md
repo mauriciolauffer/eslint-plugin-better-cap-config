@@ -1,7 +1,7 @@
 # ESLint Plugin Better CAP Config
 
-[![npm version](https://badge.fury.io/js/eslint-plugin-better-cap-config.svg)](https://badge.fury.io/js/eslint-plugin-better-cap-config)
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![npm](https://img.shields.io/npm/v/eslint-plugin-better-cap-config)](https://www.npmjs.com/package/eslint-plugin-better-cap-config)
+[![test](https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/actions/workflows/test.yml/badge.svg)](https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/actions/workflows/test.yml)
 
 An ESLint plugin for improving SAP CAP (Cloud Application Programming Model) configuration patterns in JSON files.
 
@@ -14,7 +14,7 @@ An ESLint plugin for improving SAP CAP (Cloud Application Programming Model) con
 ## Installation
 
 ```bash
-npm install --save-dev eslint  @eslintjson  eslint-plugin-better-cap-config
+npm install --save-dev eslint  @eslint/json  eslint-plugin-better-cap-config
 ```
 
 ## Rules
@@ -29,7 +29,8 @@ Disallows the deprecated `cds.fiori.draft_compat` configuration.
 {
   "cds": {
     "fiori": {
-      "draft_compat": true
+      "draft_compat": true,
+      "preview": true
     }
   }
 }
@@ -164,7 +165,6 @@ The plugin works with:
 - `package.json` files
 - `.cdsrc.json` files
 - Any JSON files containing CDS configuration
-- JSON files in `cap-cds/` directories
 
 ## Development
 
