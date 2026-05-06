@@ -16,8 +16,6 @@ describe("eslint-plugin-better-cap-config", () => {
 
   it("should have circular reference resolved in configs", () => {
     expect((plugin.configs?.recommended as any).plugins).toBeTruthy();
-    expect((plugin.configs?.recommended as any).plugins["cap-config"]).toBe(
-      plugin,
-    );
+    expect((plugin.configs?.recommended as any).plugins["cap-config"]).toBe(plugin);
   });
 });

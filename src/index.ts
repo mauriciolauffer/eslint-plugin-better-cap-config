@@ -26,7 +26,7 @@ const plugin: ESLint.Plugin = {
     name: pkg.name,
     version: pkg.version,
   },
-  rules,
+  rules: rules as unknown as ESLint.Plugin["rules"],
   configs: {
     recommended: {
       plugins: {
@@ -42,11 +42,7 @@ const plugin: ESLint.Plugin = {
 };
 
 // Fix circular reference after plugin is defined
-const recommendedConfig = plugin.configs?.recommended as Record<
-  string,
-  unknown
->;
-(recommendedConfig.plugins as Record<string, ESLint.Plugin>)["cap-config"] =
-  plugin;
+const recommendedConfig = plugin.configs?.recommended as Record<string, unknown>;
+(recommendedConfig.plugins as Record<string, ESLint.Plugin>)["cap-config"] = plugin;
 
 export default plugin;

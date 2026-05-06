@@ -18,10 +18,7 @@ export interface DeprecatedConfigPattern {
 /**
  * Checks if a node value matches the deprecated value
  */
-function isDeprecatedValue(
-  node: MemberNode,
-  deprecatedValue?: boolean | string,
-): boolean {
+function isDeprecatedValue(node: MemberNode, deprecatedValue?: boolean | string): boolean {
   const value = node.value;
   if (deprecatedValue === undefined) {
     return true; // Any value is deprecated
@@ -48,12 +45,7 @@ export function checkDeprecatedCdsPattern(
   pattern: DeprecatedConfigPattern,
 ): boolean {
   // Input validation
-  if (
-    !context?.sourceCode ||
-    !node?.name ||
-    !pattern?.key ||
-    !pattern?.parentKey
-  ) {
+  if (!context?.sourceCode || !node?.name || !pattern?.key || !pattern?.parentKey) {
     return false;
   }
 

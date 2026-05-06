@@ -31,9 +31,7 @@ describe("integration tests", () => {
     expect(results).toHaveLength(1);
     expect(results[0].errorCount).toBe(0);
     expect(results[0].warningCount).toBe(1);
-    expect(results[0].messages[0].ruleId).toBe(
-      "cap-config/cds-features-odata-new-adapter",
-    );
+    expect(results[0].messages[0].ruleId).toBe("cap-config/cds-features-odata-new-adapter");
   });
 
   it("should detect deprecated cds.features.cds_validate in .cdsrc.json", async () => {
@@ -62,9 +60,7 @@ describe("integration tests", () => {
     expect(results).toHaveLength(1);
     expect(results[0].errorCount).toBe(1);
     expect(results[0].warningCount).toBe(0);
-    expect(results[0].messages[0].ruleId).toBe(
-      "cap-config/cds-features-cds-validate",
-    );
+    expect(results[0].messages[0].ruleId).toBe("cap-config/cds-features-cds-validate");
   });
 
   it("should detect deprecated cds.fiori.draft_compat in package.json", async () => {
@@ -85,8 +81,7 @@ describe("integration tests", () => {
       ],
     });
 
-    const deprecatedJson =
-      '{"name": "test-app", "cds": {"fiori": {"draft_compat": true}}}';
+    const deprecatedJson = '{"name": "test-app", "cds": {"fiori": {"draft_compat": true}}}';
     const results = await eslint.lintText(deprecatedJson, {
       filePath: "package.json",
     });
@@ -94,9 +89,7 @@ describe("integration tests", () => {
     expect(results).toHaveLength(1);
     expect(results[0].errorCount).toBe(1);
     expect(results[0].warningCount).toBe(0);
-    expect(results[0].messages[0].ruleId).toStrictEqual(
-      "cap-config/cds-fiori-draft-compat",
-    );
+    expect(results[0].messages[0].ruleId).toStrictEqual("cap-config/cds-fiori-draft-compat");
   });
 
   it.skip("should work with recommended config", async () => {
@@ -132,9 +125,7 @@ describe("integration tests", () => {
     expect(results[0].warningCount).toBe(0);
 
     const ruleIds = results[0].messages.map((m) => m.ruleId);
-    expect(ruleIds.includes("cap-config/cds-features-odata-new-adapter")).toBe(
-      true,
-    );
+    expect(ruleIds.includes("cap-config/cds-features-odata-new-adapter")).toBe(true);
     expect(ruleIds.includes("cap-config/cds-features-cds-validate")).toBe(true);
     expect(ruleIds.includes("cap-config/cds-fiori-draft-compat")).toBe(true);
   });
@@ -217,9 +208,7 @@ describe("integration tests", () => {
     expect(results[0].warningCount).toBe(0);
 
     const ruleIds = results[0].messages.map((m) => m.ruleId);
-    expect(ruleIds.includes("cap-config/cds-features-odata-new-adapter")).toBe(
-      true,
-    );
+    expect(ruleIds.includes("cap-config/cds-features-odata-new-adapter")).toBe(true);
     expect(ruleIds.includes("cap-config/cds-fiori-draft-compat")).toBe(true);
   });
 
