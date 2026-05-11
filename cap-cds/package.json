@@ -31,9 +31,6 @@
     "eslint": "^9",
     "wdio-qunit-service": "^2"
   },
-  "engines": {
-    "node": "^20"
-  },
   "cds": {
     "sql": {
       "native_hana_associations": false

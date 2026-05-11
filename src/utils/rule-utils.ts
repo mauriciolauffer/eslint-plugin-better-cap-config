@@ -7,8 +7,10 @@ import type { MemberNode } from "@humanwhocodes/momoa";
 export interface DeprecatedConfigPattern {
   /** The key to look for (e.g., "draft_compat", "odata_new_adapter") */
   key: string;
-  /** The nested path in cds configuration (e.g., "fiori", "features") */
+  /** The nearest ancestor key in cds configuration (e.g., "fiori", "features") */
   parentKey: string;
+  /** Additional ancestor keys above parentKey, ordered from nearest to farthest (e.g., ["subscriptionManager"] for cds.multiTenancy.subscriptionManager.key) */
+  ancestorKeys?: string[];
   /** Whether to check for specific value (e.g., false for some deprecated features) */
   checkValue?: boolean;
   /** The deprecated value to check for (e.g., false) */
@@ -54,16 +56,27 @@ export function checkDeprecatedCdsPattern(
     return false;
   }
 
-  const parentMember = context.sourceCode
+  const memberAncestors = context.sourceCode
     .getAncestors(node)
-    .filter((parentNode) => parentNode.type === "Member")
-    .at(-1);
-  const parentKey =
-    parentMember?.name.type === "String" && parentMember.name?.value
-      ? parentMember.name?.value
-      : null;
+    .filter((parentNode) => parentNode.type === "Member");
+
+  const getMemberKey = (member: (typeof memberAncestors)[number] | undefined): string | null =>
+    member?.name.type === "String" && member.name?.value ? member.name.value : null;
+
+  const parentMember = memberAncestors.at(-1);
+  const parentKey = getMemberKey(parentMember);
   if (parentKey !== pattern.parentKey) {
     return false;
+  }
+
+  if (pattern.ancestorKeys?.length) {
+    for (let i = 0; i < pattern.ancestorKeys.length; i++) {
+      const ancestor = memberAncestors.at(-(2 + i));
+      const expectedKey = pattern.ancestorKeys[i];
+      if (getMemberKey(ancestor) != expectedKey) {
+        return false;
+      }
+    }
   }
 
   if (pattern.checkValue && !isDeprecatedValue(node, pattern.deprecatedValue)) {
