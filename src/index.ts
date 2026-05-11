@@ -25,6 +25,13 @@ import cdsFeaturesServiceLevelRestrictions from "./rules/cds-features-service-le
 import cdsFeaturesConsistentParams from "./rules/cds-features-consistent-params.js";
 import cdsDraftsCancellationTimeout from "./rules/cds-drafts-cancellation-timeout.js";
 import cdsRequiresDbDatabase from "./rules/cds-requires-db-database.js";
+import cdsCdscNewparser from "./rules/cds-cdsc-newparser.js";
+import cdsFeaturesServeOnRoot from "./rules/cds-features-serve-on-root.js";
+import cdsFeaturesXssecCompat from "./rules/cds-features-xssec-compat.js";
+import cdsFioriLeanDraft from "./rules/cds-fiori-lean-draft.js";
+import cdsRequiresMiddlewares from "./rules/cds-requires-middlewares.js";
+import cdsSqlNativeHanaAssociations from "./rules/cds-sql-native-hana-associations.js";
+import cdsSqlTransitiveLocalizedViews from "./rules/cds-sql-transitive-localized-views.js";
 
 const pkg = JSON.parse(
   // eslint-disable-next-line security/detect-non-literal-fs-filename
@@ -60,6 +67,13 @@ const rules = {
   "cds-features-consistent-params": cdsFeaturesConsistentParams,
   "cds-drafts-cancellation-timeout": cdsDraftsCancellationTimeout,
   "cds-requires-db-database": cdsRequiresDbDatabase,
+  "cds-cdsc-newparser": cdsCdscNewparser,
+  "cds-features-serve-on-root": cdsFeaturesServeOnRoot,
+  "cds-features-xssec-compat": cdsFeaturesXssecCompat,
+  "cds-fiori-lean-draft": cdsFioriLeanDraft,
+  "cds-requires-middlewares": cdsRequiresMiddlewares,
+  "cds-sql-native-hana-associations": cdsSqlNativeHanaAssociations,
+  "cds-sql-transitive-localized-views": cdsSqlTransitiveLocalizedViews,
 };
 
 /**
@@ -102,6 +116,13 @@ const plugin: ESLint.Plugin = {
         "cap-config/cds-features-consistent-params": "error",
         "cap-config/cds-drafts-cancellation-timeout": "error",
         "cap-config/cds-requires-db-database": "error",
+        "cap-config/cds-cdsc-newparser": "error",
+        "cap-config/cds-features-serve-on-root": "error",
+        "cap-config/cds-features-xssec-compat": "error",
+        "cap-config/cds-fiori-lean-draft": "error",
+        "cap-config/cds-requires-middlewares": "error",
+        "cap-config/cds-sql-native-hana-associations": "error",
+        "cap-config/cds-sql-transitive-localized-views": "error",
       },
     },
   },
