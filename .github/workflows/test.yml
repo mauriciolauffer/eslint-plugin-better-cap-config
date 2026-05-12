@@ -33,7 +33,7 @@ jobs:
         if: always()
         with:
           name: eslint-plugin-better-cap-config
-          path: test-results/results-*.xml
+          path: test-results/junit-report.xml
           reporter: jest-junit
       - run: pnpm run lint
       - run: pnpm run lint:ci

@@ -35,6 +35,7 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:lint:json": "eslint -c eslint.json-test.config.js",
+    "test:ci": "vitest run --reporter=junit --outputFile=./test-results/junit-report.xml",
     "lint": "eslint --cache && oxfmt --check .",
     "lint:fix": "eslint --cache --fix && oxfmt .",
     "lint:ci": "eslint --quiet -f @microsoft/eslint-formatter-sarif -o eslint.sarif",
