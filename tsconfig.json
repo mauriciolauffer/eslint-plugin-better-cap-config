@@ -13,12 +13,14 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "resolveJsonModule": true,
+    "rootDir": "src",
     "outDir": "dist",
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
     "skipLibCheck": true,
-    "erasableSyntaxOnly": true
+    "erasableSyntaxOnly": true,
+    "types": ["@types/eslint", "@types/node"]
   },
   "include": ["src"]
 }

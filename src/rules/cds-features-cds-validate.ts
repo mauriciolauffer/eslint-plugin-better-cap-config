@@ -1,4 +1,4 @@
-import type { JSONRuleDefinition, JSONRuleVisitor } from "@eslint/json/types";
+import type { JSONRuleDefinition, JSONRuleVisitor } from "@eslint/json";
 import type { MemberNode } from "@humanwhocodes/momoa";
 import { checkDeprecatedCdsPattern } from "../utils/rule-utils.js";
 
@@ -9,8 +9,7 @@ const rule: JSONRuleDefinition<{
     type: "problem",
     docs: {
       recommended: true,
-      description:
-        "Disallow deprecated cds.features.cds_validate configuration",
+      description: "Disallow deprecated cds.features.cds_validate configuration",
       url: "https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/docs/rules/cds-features-cds-validate.md",
     },
     messages: {

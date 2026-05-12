@@ -1,4 +1,4 @@
-import type { JSONRuleDefinition, JSONRuleVisitor } from "@eslint/json/types";
+import type { JSONRuleDefinition, JSONRuleVisitor } from "@eslint/json";
 import type { MemberNode } from "@humanwhocodes/momoa";
 import { checkDeprecatedCdsPattern } from "../utils/rule-utils.js";
 

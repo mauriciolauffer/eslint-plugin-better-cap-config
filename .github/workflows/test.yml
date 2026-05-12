@@ -11,30 +11,32 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18, 20, 22, 24]
+        node-version: [20, 22, 24]
     permissions:
       checks: write
       security-events: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          cache: true
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
       - run: pnpm i --prefer-offline
       - run: pnpm run build
-      - run: pnpm run test
+      - run: pnpm run test:ci
       - name: Test Report
-        uses: dorny/test-reporter@v2
+        uses: dorny/test-reporter@v3
         if: always()
         with:
-          name: WDIO QUnit Service
-          path: test-results/results-*.xml
+          name: eslint-plugin-better-cap-config
+          path: test-results/junit-report.xml
           reporter: jest-junit
       - run: pnpm run lint
       - run: pnpm run lint:ci
-      - uses: github/codeql-action/upload-sarif@v3
+      - uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: eslint.sarif
