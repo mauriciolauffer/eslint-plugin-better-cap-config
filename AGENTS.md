@@ -56,5 +56,5 @@ This means rules match by **relative position** (`parentKey → key`), not by ch
 
 ### Key dependency constraints
 
-- `vitest` is pinned to `3.2.4` to match `@vitest/coverage-v8` and `@vitest/ui` — do not upgrade independently.
+- `vitest` is pinned to match `@vitest/coverage-v8` and `@vitest/ui` — do not upgrade independently.
 - `@eslint/json` is a **peer dependency** (not bundled); consumers must install it alongside ESLint.
