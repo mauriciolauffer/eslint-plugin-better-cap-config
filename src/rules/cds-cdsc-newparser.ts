@@ -10,7 +10,7 @@ const rule: JSONRuleDefinition<{
     docs: {
       recommended: true,
       description: "Disallow deprecated cds.cdsc.newparser: false configuration",
-      url: "https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/docs/rules/cds-cdsc-newparser.md",
+      url: "https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/blob/main/docs/rules/cds-cdsc-newparser.md",
     },
     messages: {
       deprecatedCdsCdscNewparser:
