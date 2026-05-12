@@ -73,6 +73,7 @@ export function checkDeprecatedCdsPattern(
     for (let i = 0; i < pattern.ancestorKeys.length; i++) {
       const ancestor = memberAncestors.at(-(2 + i));
       const expectedKey = pattern.ancestorKeys[i];
+      // eslint-disable-next-line sonarjs/different-types-comparison
       if (getMemberKey(ancestor) !== expectedKey) {
         return false;
       }
