@@ -534,3 +534,162 @@ so that I avoid using deprecated configurations and keep my code compliant with 
   - "cds.requires.db.database" is deprecated. Please remove or update this configuration.
 
 - Applies to .json files including .cdsrc.json, package.json, etc.
+
+---
+
+## User Story: Deprecated cds.cdsc.newparser
+
+As a developer,
+
+I want an ESLint rule that flags the deprecated key-value pair `"cds.cdsc.newparser": false` in any JSON file within a project,
+
+so that I avoid pinning the legacy CDS parser and keep my code compliant with current standards.
+
+### Acceptance Criteria
+
+- The rule must detect any occurrence of `"cds.cdsc.newparser": false` and `"cdsc.newparser": false`.
+
+- The rule should not trigger if the key is missing.
+
+- The rule should only trigger if the value is false.
+
+- ESLint should throw a warning (or error if configured) with the message:
+  - "cds.cdsc.newparser: false" is deprecated. The new CDS parser is the default as of May 2025. Remove this flag or set it to true.
+
+- Applies to .json files including .cdsrc.json, package.json, etc.
+
+---
+
+## User Story: Deprecated cds.features.serve_on_root
+
+As a developer,
+
+I want an ESLint rule that flags the deprecated key-value pair `"cds.features.serve_on_root": true` in any JSON file within a project,
+
+so that I avoid using the deprecated root-path serving behaviour and keep my code compliant with current standards.
+
+### Acceptance Criteria
+
+- The rule must detect any occurrence of `"cds.features.serve_on_root": true` and `"features.serve_on_root": true`.
+
+- The rule should not trigger if the key is missing.
+
+- The rule should only trigger if the value is true.
+
+- ESLint should throw a warning (or error if configured) with the message:
+  - "cds.features.serve_on_root: true" is deprecated. Use the new path scheme or apply an absolute @path annotation instead.
+
+- Applies to .json files including .cdsrc.json, package.json, etc.
+
+---
+
+## User Story: Deprecated cds.features.xssec_compat
+
+As a developer,
+
+I want an ESLint rule that flags the presence of the deprecated key `cds.features.xssec_compat` in any JSON file within a project,
+
+so that I am reminded to upgrade to `@sap/xssec` v4 and remove the compatibility shim.
+
+### Acceptance Criteria
+
+- The rule must detect any occurrence of `cds.features.xssec_compat` and `features.xssec_compat`.
+
+- The rule should not trigger if the key is missing.
+
+- ESLint should throw a warning (or error if configured) with the message:
+  - "cds.features.xssec_compat" is deprecated. Upgrade to @sap/xssec v4 and remove this compatibility flag.
+
+- Applies to .json files including .cdsrc.json, package.json, etc.
+
+---
+
+## User Story: Deprecated cds.fiori.lean_draft
+
+As a developer,
+
+I want an ESLint rule that flags the deprecated key-value pair `"cds.fiori.lean_draft": false` in any JSON file within a project,
+
+so that I remove the obsolete opt-out from lean draft, which is no longer honoured in CDS 8.
+
+### Acceptance Criteria
+
+- The rule must detect any occurrence of `"cds.fiori.lean_draft": false` and `"fiori.lean_draft": false`.
+
+- The rule should not trigger if the key is missing.
+
+- The rule should only trigger if the value is false.
+
+- ESLint should throw a warning (or error if configured) with the message:
+  - "cds.fiori.lean_draft: false" is deprecated. The old draft implementation was removed in CDS 8. Remove this configuration.
+
+- Applies to .json files including .cdsrc.json, package.json, etc.
+
+---
+
+## User Story: Deprecated cds.requires.middlewares
+
+As a developer,
+
+I want an ESLint rule that flags the deprecated key-value pair `"cds.requires.middlewares": false` in any JSON file within a project,
+
+so that I stop opting out of the current middleware system and keep my code compliant with current standards.
+
+### Acceptance Criteria
+
+- The rule must detect any occurrence of `"cds.requires.middlewares": false` and `"requires.middlewares": false`.
+
+- The rule should not trigger if the key is missing.
+
+- The rule should only trigger if the value is false.
+
+- ESLint should throw a warning (or error if configured) with the message:
+  - "cds.requires.middlewares: false" is deprecated. The old middleware system has been replaced. Remove this configuration.
+
+- Applies to .json files including .cdsrc.json, package.json, etc.
+
+---
+
+## User Story: Deprecated cds.sql.native_hana_associations
+
+As a developer,
+
+I want an ESLint rule that flags the deprecated key-value pair `"cds.sql.native_hana_associations": true` in any JSON file within a project,
+
+so that I avoid generating unnecessary native HANA associations and reduce deployment times.
+
+### Acceptance Criteria
+
+- The rule must detect any occurrence of `"cds.sql.native_hana_associations": true` and `"sql.native_hana_associations": true`.
+
+- The rule should not trigger if the key is missing.
+
+- The rule should only trigger if the value is true.
+
+- ESLint should throw a warning (or error if configured) with the message:
+  - "cds.sql.native_hana_associations: true" is deprecated. Set to false or remove to reduce deployment times. Will be removed in CDS 9.
+
+- Applies to .json files including .cdsrc.json, package.json, etc.
+
+---
+
+## User Story: Deprecated cds.sql.transitive_localized_views
+
+As a developer,
+
+I want an ESLint rule that flags the deprecated key-value pair `"cds.sql.transitive_localized_views": true` in any JSON file within a project,
+
+so that I stop generating transitive localized views and reduce the number of database objects.
+
+### Acceptance Criteria
+
+- The rule must detect any occurrence of `"cds.sql.transitive_localized_views": true` and `"sql.transitive_localized_views": true`.
+
+- The rule should not trigger if the key is missing.
+
+- The rule should only trigger if the value is true.
+
+- ESLint should throw a warning (or error if configured) with the message:
+  - "cds.sql.transitive_localized_views: true" is deprecated. Use the default (false) to eliminate ~50% of views. Will be removed in CDS 9.
+
+- Applies to .json files including .cdsrc.json, package.json, etc.
