@@ -18,11 +18,6 @@ describe("cds-fiori-lean-draft rule", () => {
       { code: '{"cds": {"fiori": {"preview": true}}}', filename: "package.json" },
       { code: '{"fiori": {"lean_draft": true}}', filename: ".cdsrc.json" },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-fiori-lean-draft", plugin.rules!["cds-fiori-lean-draft"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"fiori": {"lean_draft": false}}}',

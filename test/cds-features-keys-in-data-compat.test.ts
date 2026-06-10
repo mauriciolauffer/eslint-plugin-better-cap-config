@@ -19,15 +19,6 @@ describe("cds-features-keys-in-data-compat rule", () => {
         { code: '{"cds": {"requires": {"db": "sqlite"}}}', filename: "package.json" },
         { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-keys-in-data-compat",
-    plugin.rules!["cds-features-keys-in-data-compat"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"features": {"keys_in_data_compat": true}}}',

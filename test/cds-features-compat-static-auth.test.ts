@@ -19,15 +19,6 @@ describe("cds-features-compat-static-auth rule", () => {
         { code: '{"cds": {"requires": {"db": "sqlite"}}}', filename: "package.json" },
         { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-compat-static-auth",
-    plugin.rules!["cds-features-compat-static-auth"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"features": {"compat_static_auth": true}}}',

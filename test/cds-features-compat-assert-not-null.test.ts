@@ -19,15 +19,6 @@ describe("cds-features-compat-assert-not-null rule", () => {
         { code: '{"cds": {"requires": {"db": "sqlite"}}}', filename: "package.json" },
         { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-compat-assert-not-null",
-    plugin.rules!["cds-features-compat-assert-not-null"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"features": {"compat_assert_not_null": true}}}',

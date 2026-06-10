@@ -20,15 +20,6 @@ describe("cds-features-compat-save-drafts rule", () => {
         { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
         { code: '{"requires": {"db": "sqlite"}}', filename: ".cdsrc.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-compat-save-drafts",
-    plugin.rules!["cds-features-compat-save-drafts"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"features": {"compat_save_drafts": true}}}',

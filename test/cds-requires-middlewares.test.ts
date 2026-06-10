@@ -17,11 +17,6 @@ describe("cds-requires-middlewares rule", () => {
       { code: '{"cds": {"requires": {"middlewares": true}}}', filename: "package.json" },
       { code: '{"requires": {"middlewares": true}}', filename: ".cdsrc.json" },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-requires-middlewares", plugin.rules!["cds-requires-middlewares"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"requires": {"middlewares": false}}}',

@@ -17,11 +17,6 @@ describe("cds-requires-db-database rule", () => {
       { code: '{"cds": {"requires": {"db": {"kind": "hana"}}}}', filename: "package.json" },
       { code: '{"requires": {"db": {"kind": "hana"}}}', filename: ".cdsrc.json" },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-requires-db-database", plugin.rules!["cds-requires-db-database"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"requires": {"db": {"database": "mydb"}}}}',

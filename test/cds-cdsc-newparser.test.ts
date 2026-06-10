@@ -17,11 +17,6 @@ describe("cds-cdsc-newparser rule", () => {
       { code: '{"cds": {"cdsc": {"newparser": true}}}', filename: "package.json" },
       { code: '{"cdsc": {"newparser": true}}', filename: ".cdsrc.json" },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-cdsc-newparser", plugin.rules!["cds-cdsc-newparser"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"cdsc": {"newparser": false}}}',

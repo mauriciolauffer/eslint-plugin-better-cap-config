@@ -63,15 +63,6 @@ describe("cds-features-odata-new-adapter rule", () => {
           filename: ".cdsrc.json",
         },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-odata-new-adapter",
-    plugin.rules!["cds-features-odata-new-adapter"],
-    {
-      valid: [],
       invalid: [
         // Case 1: odata_new_adapter set to false
         {

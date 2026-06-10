@@ -16,11 +16,6 @@ describe("cds-remote-native-fetch rule", () => {
       { code: '{"cds": {"requires": {"db": "sqlite"}}}', filename: "package.json" },
       { code: '{"cds": {"remote": {"timeout": 5000}}}', filename: "package.json" },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-remote-native-fetch", plugin.rules!["cds-remote-native-fetch"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"remote": {"native_fetch": true}}}',

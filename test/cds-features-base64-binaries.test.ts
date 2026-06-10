@@ -16,11 +16,6 @@ describe("cds-features-base64-binaries rule", () => {
       { code: '{"cds": {"requires": {"db": "sqlite"}}}', filename: "package.json" },
       { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-features-base64-binaries", plugin.rules!["cds-features-base64-binaries"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"features": {"base64_binaries": true}}}',

@@ -20,15 +20,6 @@ describe("cds-drafts-cancellation-timeout rule", () => {
         { code: '{"cds": {"fiori": {"draft_lock_timeout": 15}}}', filename: "package.json" },
         { code: '{"requires": {"db": "sqlite"}}', filename: ".cdsrc.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-drafts-cancellation-timeout",
-    plugin.rules!["cds-drafts-cancellation-timeout"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"drafts": {"cancellationTimeout": 15}}}',

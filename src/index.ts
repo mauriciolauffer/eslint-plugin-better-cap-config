@@ -1,5 +1,5 @@
 import type { ESLint } from "eslint";
-import { readFile } from "node:fs/promises";
+import pkg from "../package.json" with { type: "json" };
 import cdsFioriDraftCompat from "./rules/cds-fiori-draft-compat.js";
 import cdsFeaturesOdataNewAdapter from "./rules/cds-features-odata-new-adapter.js";
 import cdsFeaturesCdsValidate from "./rules/cds-features-cds-validate.js";
@@ -32,11 +32,6 @@ import cdsFioriLeanDraft from "./rules/cds-fiori-lean-draft.js";
 import cdsRequiresMiddlewares from "./rules/cds-requires-middlewares.js";
 import cdsSqlNativeHanaAssociations from "./rules/cds-sql-native-hana-associations.js";
 import cdsSqlTransitiveLocalizedViews from "./rules/cds-sql-transitive-localized-views.js";
-
-const pkg = JSON.parse(
-  // eslint-disable-next-line security/detect-non-literal-fs-filename
-  await readFile(new URL("../package.json", import.meta.url), "utf8"),
-);
 
 /**
  * Collection of all available rules in this plugin

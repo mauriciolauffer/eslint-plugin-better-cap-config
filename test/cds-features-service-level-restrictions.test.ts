@@ -28,15 +28,6 @@ describe("cds-features-service-level-restrictions rule", () => {
         },
         { code: '{"requires": {"db": "sqlite"}}', filename: ".cdsrc.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-service-level-restrictions",
-    plugin.rules!["cds-features-service-level-restrictions"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"features": {"service_level_restrictions": false}}}',

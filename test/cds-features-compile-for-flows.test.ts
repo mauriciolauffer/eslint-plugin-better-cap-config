@@ -19,15 +19,6 @@ describe("cds-features-compile-for-flows rule", () => {
         { code: '{"cds": {"features": {"annotate_for_flows": true}}}', filename: "package.json" },
         { code: '{"cds": {"requires": {"db": "sqlite"}}}', filename: "package.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-compile-for-flows",
-    plugin.rules!["cds-features-compile-for-flows"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"features": {"compile_for_flows": true}}}',

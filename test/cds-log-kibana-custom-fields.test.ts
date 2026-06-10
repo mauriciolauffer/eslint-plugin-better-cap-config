@@ -19,11 +19,6 @@ describe("cds-log-kibana-custom-fields rule", () => {
         filename: "package.json",
       },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-log-kibana-custom-fields", plugin.rules!["cds-log-kibana-custom-fields"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"log": {"kibana_custom_fields": ["field1"]}}}',
