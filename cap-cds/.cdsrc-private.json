@@ -1,15 +1,55 @@
 {
+  "cdsc": {
+    "newparser": false
+  },
+  "drafts": {
+    "cancellationTimeout": 15
+  },
+  "features": {
+    "async_handler_compat": true,
+    "base64_binaries": true,
+    "cds_validate": false,
+    "compat_assert_not_null": true,
+    "compat_restrict_bound": true,
+    "compat_restrict_where": true,
+    "compat_save_drafts": true,
+    "compat_static_auth": true,
+    "compat_texts_entities": true,
+    "compile_for_flows": true,
+    "consistent_params": false,
+    "keys_in_data_compat": true,
+    "kibana_formatter": true,
+    "new_draft_via_action": true,
+    "odata_new_adapter": false,
+    "serve_on_root": true,
+    "service_level_restrictions": false,
+    "stream_compat": true,
+    "xssec_compat": true
+  },
+  "fiori": {
+    "calc_elements": true,
+    "draft_compat": true,
+    "lean_draft": false
+  },
   "log": {
+    "kibana_custom_fields": ["requestId", "correlationId"],
     "levels": {
       "cli": "warn"
     }
   },
-  "features": {
-    "odata_new_adapter": false,
-    "cds_validate": false
+  "multiTenancy": {
+    "subscriptionManager": {
+      "clientCertificateHeader": "x-client-certificate"
+    }
   },
-  "fiori": { "draft_compat": true },
+  "remote": {
+    "native_fetch": true
+  },
   "requires": {
+    "db": {
+      "database": "my-sap-cap-app-db"
+    },
+    "middlewares": false,
     "[hybrid]": {
       "db": {
         "binding": {
@@ -27,5 +67,12 @@
         }
       }
     }
+  },
+  "sql": {
+    "native_hana_associations": true,
+    "runtimeView": {
+      "mode": "resolve"
+    },
+    "transitive_localized_views": true
   }
 }

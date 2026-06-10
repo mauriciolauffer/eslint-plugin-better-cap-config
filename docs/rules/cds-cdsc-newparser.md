@@ -57,5 +57,5 @@ If you are still in the process of migrating to the new CDS parser and need to m
 
 ## Further Reading
 
-- [CAP Release Notes March 2025](https://cap.cloud.sap/docs/releases/2025/mar25)
-- [CAP Release Notes November 2024](https://cap.cloud.sap/docs/releases/2024/nov24)
+- [CAP Release Notes January 2025](https://cap.cloud.sap/docs/releases/2025/jan25)
+- [CAP Changelog 2025](https://cap.cloud.sap/docs/releases/2025/changelog)
