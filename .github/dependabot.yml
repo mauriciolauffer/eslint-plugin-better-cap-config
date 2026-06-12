@@ -1,17 +1,17 @@
 version: 2
 updates:
-  - package-ecosystem: "pnpm"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "monthly"
     allow:
       - dependency-type: "production"
     cooldown:
-      days: 2
+      default-days: 2
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "monthly"
     cooldown:
-      days: 2
+      default-days: 2
