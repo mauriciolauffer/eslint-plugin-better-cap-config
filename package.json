@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-better-cap-config",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "ESLint plugin to detect deprecated SAP CAP configurations",
   "keywords": [
     "cap-js",
