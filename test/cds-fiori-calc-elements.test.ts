@@ -16,11 +16,6 @@ describe("cds-fiori-calc-elements rule", () => {
       { code: '{"cds": {"requires": {"db": "sqlite"}}}', filename: "package.json" },
       { code: '{"cds": {"fiori": {"preview": true}}}', filename: "package.json" },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-fiori-calc-elements", plugin.rules!["cds-fiori-calc-elements"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"fiori": {"calc_elements": true}}}',

@@ -17,11 +17,6 @@ describe("cds-features-xssec-compat rule", () => {
       { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
       { code: '{"features": {"other_key": true}}', filename: ".cdsrc.json" },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-features-xssec-compat", plugin.rules!["cds-features-xssec-compat"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"features": {"xssec_compat": true}}}',

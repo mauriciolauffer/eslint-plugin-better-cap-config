@@ -19,15 +19,6 @@ describe("cds-features-compat-restrict-where rule", () => {
         { code: '{"cds": {"requires": {"db": "sqlite"}}}', filename: "package.json" },
         { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-compat-restrict-where",
-    plugin.rules!["cds-features-compat-restrict-where"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"features": {"compat_restrict_where": true}}}',

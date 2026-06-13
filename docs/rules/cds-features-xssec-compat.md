@@ -49,4 +49,4 @@ If you have not yet upgraded `@sap/xssec` to version 4 and need the compatibilit
 ## Further Reading
 
 - [CAP Release Notes January 2025](https://cap.cloud.sap/docs/releases/2025/jan25)
-- [CAP Release Notes April 2025](https://cap.cloud.sap/docs/releases/2025/apr25)
+- [CAP Changelog 2025](https://cap.cloud.sap/docs/releases/2025/changelog)

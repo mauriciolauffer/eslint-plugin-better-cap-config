@@ -23,11 +23,6 @@ describe("cds-sql-runtime-view-mode rule", () => {
         filename: "package.json",
       },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-sql-runtime-view-mode", plugin.rules!["cds-sql-runtime-view-mode"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"sql": {"runtimeView": {"mode": "resolve"}}}}',

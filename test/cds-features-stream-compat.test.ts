@@ -17,11 +17,6 @@ describe("cds-features-stream-compat rule", () => {
       { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
       { code: '{"requires": {"db": "sqlite"}}', filename: ".cdsrc.json" },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-features-stream-compat", plugin.rules!["cds-features-stream-compat"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"features": {"stream_compat": true}}}',

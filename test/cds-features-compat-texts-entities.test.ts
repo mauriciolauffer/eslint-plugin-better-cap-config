@@ -20,15 +20,6 @@ describe("cds-features-compat-texts-entities rule", () => {
         { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
         { code: '{"requires": {"db": "sqlite"}}', filename: ".cdsrc.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-compat-texts-entities",
-    plugin.rules!["cds-features-compat-texts-entities"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"features": {"compat_texts_entities": true}}}',

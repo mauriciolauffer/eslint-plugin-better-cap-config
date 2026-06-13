@@ -16,11 +16,6 @@ describe("cds-features-kibana-formatter rule", () => {
       { code: '{"cds": {"requires": {"db": "sqlite"}}}', filename: "package.json" },
       { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-features-kibana-formatter", plugin.rules!["cds-features-kibana-formatter"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"features": {"kibana_formatter": true}}}',

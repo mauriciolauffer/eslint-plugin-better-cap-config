@@ -21,15 +21,6 @@ describe("cds-features-new-draft-via-action rule", () => {
         { code: '{"cds": {"fiori": {"direct_crud": true}}}', filename: "package.json" },
         { code: '{"requires": {"db": "sqlite"}}', filename: ".cdsrc.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-new-draft-via-action",
-    plugin.rules!["cds-features-new-draft-via-action"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"features": {"new_draft_via_action": true}}}',

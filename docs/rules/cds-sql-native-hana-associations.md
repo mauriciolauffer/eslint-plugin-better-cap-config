@@ -58,3 +58,4 @@ If your project specifically requires native HANA associations and you have not 
 ## Further Reading
 
 - [CAP Release Notes June 2024](https://cap.cloud.sap/docs/releases/2024/jun24)
+- [CAP Release Notes August 2024](https://cap.cloud.sap/docs/releases/2024/aug24)

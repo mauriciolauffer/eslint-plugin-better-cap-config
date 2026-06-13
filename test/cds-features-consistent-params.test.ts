@@ -25,15 +25,6 @@ describe("cds-features-consistent-params rule", () => {
         },
         { code: '{"requires": {"db": "sqlite"}}', filename: ".cdsrc.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-consistent-params",
-    plugin.rules!["cds-features-consistent-params"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"features": {"consistent_params": false}}}',

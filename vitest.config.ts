@@ -1,4 +1,5 @@
 import { defineConfig } from "vitest/config";
+import { fileURLToPath, URL } from "node:url";
 
 export default defineConfig({
   test: {
@@ -8,11 +9,17 @@ export default defineConfig({
     coverage: {
       reporter: ["text", "json", "html"],
       include: ["src/**/*.ts"],
+      thresholds: {
+        lines: 90,
+        functions: 90,
+        branches: 90,
+        statements: 90,
+      },
     },
   },
   resolve: {
     alias: {
-      "@": "./src",
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
 });

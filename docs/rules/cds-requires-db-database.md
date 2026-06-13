@@ -88,3 +88,7 @@ The rule detects:
 - Triggers for any value of the key
 
 The rule applies to `.json` files including `package.json`, `.cdsrc.json`, and other JSON configuration files.
+
+## Further Reading
+
+- [CAP Changelog](https://cap.cloud.sap/docs/releases/changelog)

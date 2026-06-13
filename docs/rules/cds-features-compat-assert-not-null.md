@@ -71,3 +71,8 @@ The rule detects:
 - Flags the key regardless of value
 
 The rule applies to `.json` files including `package.json`, `.cdsrc.json`, and other JSON configuration files.
+
+## Further Reading
+
+- [CAP Changelog 2025](https://cap.cloud.sap/docs/releases/2025/changelog)
+- [CAP Release Notes April 2026](https://cap.cloud.sap/docs/releases/2026/apr26)

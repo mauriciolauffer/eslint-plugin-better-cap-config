@@ -92,3 +92,7 @@ The rule detects:
 - Only triggers when the value is explicitly `false`
 
 The rule applies to `.json` files including `package.json`, `.cdsrc.json`, and other JSON configuration files.
+
+## Further Reading
+
+- [CAP Release Notes June 2024](https://cap.cloud.sap/docs/releases/2024/jun24)

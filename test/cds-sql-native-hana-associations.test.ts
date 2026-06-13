@@ -23,15 +23,6 @@ describe("cds-sql-native-hana-associations rule", () => {
         },
         { code: '{"sql": {"native_hana_associations": false}}', filename: ".cdsrc.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-sql-native-hana-associations",
-    plugin.rules!["cds-sql-native-hana-associations"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"sql": {"native_hana_associations": true}}}',

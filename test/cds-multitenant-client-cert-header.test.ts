@@ -26,15 +26,6 @@ describe("cds-multitenant-client-cert-header rule", () => {
           filename: "package.json",
         },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-multitenant-client-cert-header",
-    plugin.rules!["cds-multitenant-client-cert-header"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"multiTenancy": {"subscriptionManager": {"clientCertificateHeader": "x-cert"}}}}',

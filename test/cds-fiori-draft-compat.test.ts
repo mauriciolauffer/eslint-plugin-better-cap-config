@@ -50,11 +50,6 @@ describe("cds-fiori-draft-compat rule", () => {
         filename: ".cdsrc.json",
       },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-fiori-draft-compat", plugin.rules!["cds-fiori-draft-compat"], {
-    valid: [],
     invalid: [
       // Case 1: Simple case with draft_compat set to true
       {

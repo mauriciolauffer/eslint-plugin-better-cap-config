@@ -20,15 +20,6 @@ describe("cds-features-async-handler-compat rule", () => {
         { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
         { code: '{"requires": {"db": "sqlite"}}', filename: ".cdsrc.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-features-async-handler-compat",
-    plugin.rules!["cds-features-async-handler-compat"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"features": {"async_handler_compat": true}}}',

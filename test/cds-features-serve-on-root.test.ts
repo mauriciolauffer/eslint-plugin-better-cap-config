@@ -18,11 +18,6 @@ describe("cds-features-serve-on-root rule", () => {
       { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
       { code: '{"features": {"serve_on_root": false}}', filename: ".cdsrc.json" },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-features-serve-on-root", plugin.rules!["cds-features-serve-on-root"], {
-    valid: [],
     invalid: [
       {
         code: '{"cds": {"features": {"serve_on_root": true}}}',

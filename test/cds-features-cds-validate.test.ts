@@ -60,11 +60,6 @@ describe("cds-features-cds-validate rule", () => {
         filename: ".cdsrc.json",
       },
     ],
-    invalid: [],
-  });
-
-  ruleTester.run("cds-features-cds-validate", plugin.rules!["cds-features-cds-validate"], {
-    valid: [],
     invalid: [
       // Case 1: cds_validate set to false
       {

@@ -23,15 +23,6 @@ describe("cds-sql-transitive-localized-views rule", () => {
         },
         { code: '{"sql": {"transitive_localized_views": false}}', filename: ".cdsrc.json" },
       ],
-      invalid: [],
-    },
-  );
-
-  ruleTester.run(
-    "cds-sql-transitive-localized-views",
-    plugin.rules!["cds-sql-transitive-localized-views"],
-    {
-      valid: [],
       invalid: [
         {
           code: '{"cds": {"sql": {"transitive_localized_views": true}}}',

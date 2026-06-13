@@ -84,5 +84,4 @@ This rule was introduced in version 1.0.0.
 
 ## Further Reading
 
-- [SAP CAP Documentation](https://cap.cloud.sap/)
-- [Migration Guide](https://cap.cloud.sap/docs/releases/)
+- [CAP Release Notes June 2024](https://cap.cloud.sap/docs/releases/2024/jun24)
