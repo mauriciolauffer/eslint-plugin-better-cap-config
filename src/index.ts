@@ -32,6 +32,15 @@ import cdsFioriLeanDraft from "./rules/cds-fiori-lean-draft.js";
 import cdsRequiresMiddlewares from "./rules/cds-requires-middlewares.js";
 import cdsSqlNativeHanaAssociations from "./rules/cds-sql-native-hana-associations.js";
 import cdsSqlTransitiveLocalizedViews from "./rules/cds-sql-transitive-localized-views.js";
+import cdsFeaturesOdataMetadataCompat from "./rules/cds-features-odata-metadata-compat.js";
+import cdsFeaturesLegacySrvResults from "./rules/cds-features-legacy-srv-results.js";
+import cdsFeaturesBulkInsertsViaRest from "./rules/cds-features-bulk-inserts-via-rest.js";
+import cdsFeaturesCompatCloneAppends from "./rules/cds-features-compat-clone-appends.js";
+import cdsFeaturesCompatSrvGetters from "./rules/cds-features-compat-srv-getters.js";
+import cdsI18nFatjson from "./rules/cds-i18n-fatjson.js";
+import cdsMcpAutoConfig from "./rules/cds-mcp-auto-config.js";
+import cdsFioriDirectCrud from "./rules/cds-fiori-direct-crud.js";
+import cdsSqlCollate from "./rules/cds-sql-collate.js";
 
 /**
  * Collection of all available rules in this plugin
@@ -69,6 +78,15 @@ const rules = {
   "cds-requires-middlewares": cdsRequiresMiddlewares,
   "cds-sql-native-hana-associations": cdsSqlNativeHanaAssociations,
   "cds-sql-transitive-localized-views": cdsSqlTransitiveLocalizedViews,
+  "cds-features-odata-metadata-compat": cdsFeaturesOdataMetadataCompat,
+  "cds-features-legacy-srv-results": cdsFeaturesLegacySrvResults,
+  "cds-features-bulk-inserts-via-rest": cdsFeaturesBulkInsertsViaRest,
+  "cds-features-compat-clone-appends": cdsFeaturesCompatCloneAppends,
+  "cds-features-compat-srv-getters": cdsFeaturesCompatSrvGetters,
+  "cds-i18n-fatjson": cdsI18nFatjson,
+  "cds-mcp-auto-config": cdsMcpAutoConfig,
+  "cds-fiori-direct-crud": cdsFioriDirectCrud,
+  "cds-sql-collate": cdsSqlCollate,
 };
 
 /**
@@ -118,6 +136,15 @@ const plugin: ESLint.Plugin = {
         "cap-config/cds-requires-middlewares": "error",
         "cap-config/cds-sql-native-hana-associations": "error",
         "cap-config/cds-sql-transitive-localized-views": "error",
+        "cap-config/cds-features-odata-metadata-compat": "error",
+        "cap-config/cds-features-legacy-srv-results": "error",
+        "cap-config/cds-features-bulk-inserts-via-rest": "error",
+        "cap-config/cds-features-compat-clone-appends": "error",
+        "cap-config/cds-features-compat-srv-getters": "error",
+        "cap-config/cds-i18n-fatjson": "error",
+        "cap-config/cds-mcp-auto-config": "error",
+        "cap-config/cds-fiori-direct-crud": "error",
+        "cap-config/cds-sql-collate": "error",
       },
     },
   },
