@@ -35,5 +35,24 @@
     "severities": {
       "odata-spec-violation-no-key": "Warning"
     }
+  },
+  "features": {
+    "bulk_inserts_via_rest": false,
+    "compat_clone_appends": true,
+    "compat_srv_getters": true,
+    "legacy_srv_results": true,
+    "odata_metadata_compat": true
+  },
+  "fiori": {
+    "direct_crud": true
+  },
+  "i18n": {
+    "fatjson": true
+  },
+  "mcp": {
+    "autoConfig": true
+  },
+  "sql": {
+    "collate": "USING ICU LOCALE 'en-US'"
   }
 }

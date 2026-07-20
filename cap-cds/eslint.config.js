@@ -1,6 +1,6 @@
 import { defineConfig } from "eslint/config";
 import json from "@eslint/json";
-import capConfig from "./dist/index.js";
+import capConfig from "../dist/index.js";
 
 export default defineConfig([
   {
@@ -8,7 +8,7 @@ export default defineConfig([
   },
   {
     ignores: ["package-lock.json"],
-    files: ["**/*.json"],
+    files: ["cap-cds/*.json"],
     plugins: {
       json,
     },

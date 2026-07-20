@@ -7,6 +7,7 @@
   "workspaces": [
     "app/*"
   ],
+  "type": "module",
   "scripts": {
     "start": "cds-serve",
     "lint": "eslint --cache",
@@ -33,14 +34,27 @@
   },
   "cds": {
     "sql": {
-      "native_hana_associations": false
+      "native_hana_associations": false,
+      "collate": "USING ICU LOCALE 'en-US'"
     },
     "features": {
       "odata_new_adapter": false,
-      "cds_validate": false
+      "cds_validate": false,
+      "bulk_inserts_via_rest": false,
+      "compat_clone_appends": true,
+      "compat_srv_getters": true,
+      "legacy_srv_results": true,
+      "odata_metadata_compat": true
     },
     "fiori": {
-      "draft_compat": true
+      "draft_compat": true,
+      "direct_crud": true
+    },
+    "i18n": {
+      "fatjson": true
+    },
+    "mcp": {
+      "autoConfig": true
     },
     "requires": {
       "[production]": {

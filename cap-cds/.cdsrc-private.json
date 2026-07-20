@@ -24,18 +24,30 @@
     "serve_on_root": true,
     "service_level_restrictions": false,
     "stream_compat": true,
-    "xssec_compat": true
+    "xssec_compat": true,
+    "bulk_inserts_via_rest": false,
+    "compat_clone_appends": true,
+    "compat_srv_getters": true,
+    "legacy_srv_results": true,
+    "odata_metadata_compat": true
   },
   "fiori": {
     "calc_elements": true,
     "draft_compat": true,
-    "lean_draft": false
+    "lean_draft": false,
+    "direct_crud": true
+  },
+  "i18n": {
+    "fatjson": true
   },
   "log": {
     "kibana_custom_fields": ["requestId", "correlationId"],
     "levels": {
       "cli": "warn"
     }
+  },
+  "mcp": {
+    "autoConfig": true
   },
   "multiTenancy": {
     "subscriptionManager": {
@@ -70,6 +82,7 @@
   },
   "sql": {
     "native_hana_associations": true,
+    "collate": "USING ICU LOCALE 'en-US'",
     "runtimeView": {
       "mode": "resolve"
     },

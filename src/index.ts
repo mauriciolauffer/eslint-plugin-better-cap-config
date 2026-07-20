@@ -1,4 +1,4 @@
-import type { ESLint } from "eslint";
+import type { ESLint, Linter } from "eslint";
 import pkg from "../package.json" with { type: "json" };
 import cdsFioriDraftCompat from "./rules/cds-fiori-draft-compat.js";
 import cdsFeaturesOdataNewAdapter from "./rules/cds-features-odata-new-adapter.js";
@@ -41,6 +41,18 @@ import cdsI18nFatjson from "./rules/cds-i18n-fatjson.js";
 import cdsMcpAutoConfig from "./rules/cds-mcp-auto-config.js";
 import cdsFioriDirectCrud from "./rules/cds-fiori-direct-crud.js";
 import cdsSqlCollate from "./rules/cds-sql-collate.js";
+
+/**
+ * ESLint plugin to detect deprecated CDS configuration patterns
+ */
+const plugin: ESLint.Plugin = {
+  meta: {
+    name: pkg.name,
+    version: pkg.version,
+  },
+  rules: {},
+  configs: {},
+};
 
 /**
  * Collection of all available rules in this plugin
@@ -90,68 +102,59 @@ const rules = {
 };
 
 /**
- * ESLint plugin for detecting deprecated CDS configuration patterns
+ * Recommended configuration with all rules set to error
  */
-const plugin: ESLint.Plugin = {
-  meta: {
-    name: pkg.name,
-    version: pkg.version,
+const recommended: Linter.Config = {
+  plugins: {
+    "cap-config": plugin,
   },
-  rules: rules as unknown as ESLint.Plugin["rules"],
-  configs: {
-    recommended: {
-      plugins: {
-        "cap-config": null as unknown as ESLint.Plugin, // Placeholder, will be filled below
-      },
-      rules: {
-        "cap-config/cds-fiori-draft-compat": "error",
-        "cap-config/cds-features-odata-new-adapter": "error",
-        "cap-config/cds-features-cds-validate": "error",
-        "cap-config/cds-features-compat-save-drafts": "error",
-        "cap-config/cds-features-compat-assert-not-null": "error",
-        "cap-config/cds-features-compile-for-flows": "error",
-        "cap-config/cds-features-compat-restrict-where": "error",
-        "cap-config/cds-features-compat-static-auth": "error",
-        "cap-config/cds-features-compat-restrict-bound": "error",
-        "cap-config/cds-features-base64-binaries": "error",
-        "cap-config/cds-features-keys-in-data-compat": "error",
-        "cap-config/cds-features-kibana-formatter": "error",
-        "cap-config/cds-fiori-calc-elements": "error",
-        "cap-config/cds-remote-native-fetch": "error",
-        "cap-config/cds-multitenant-client-cert-header": "error",
-        "cap-config/cds-log-kibana-custom-fields": "error",
-        "cap-config/cds-sql-runtime-view-mode": "error",
-        "cap-config/cds-features-new-draft-via-action": "error",
-        "cap-config/cds-features-compat-texts-entities": "error",
-        "cap-config/cds-features-stream-compat": "error",
-        "cap-config/cds-features-async-handler-compat": "error",
-        "cap-config/cds-features-service-level-restrictions": "error",
-        "cap-config/cds-features-consistent-params": "error",
-        "cap-config/cds-drafts-cancellation-timeout": "error",
-        "cap-config/cds-requires-db-database": "error",
-        "cap-config/cds-cdsc-newparser": "error",
-        "cap-config/cds-features-serve-on-root": "error",
-        "cap-config/cds-features-xssec-compat": "error",
-        "cap-config/cds-fiori-lean-draft": "error",
-        "cap-config/cds-requires-middlewares": "error",
-        "cap-config/cds-sql-native-hana-associations": "error",
-        "cap-config/cds-sql-transitive-localized-views": "error",
-        "cap-config/cds-features-odata-metadata-compat": "error",
-        "cap-config/cds-features-legacy-srv-results": "error",
-        "cap-config/cds-features-bulk-inserts-via-rest": "error",
-        "cap-config/cds-features-compat-clone-appends": "error",
-        "cap-config/cds-features-compat-srv-getters": "error",
-        "cap-config/cds-i18n-fatjson": "error",
-        "cap-config/cds-mcp-auto-config": "error",
-        "cap-config/cds-fiori-direct-crud": "error",
-        "cap-config/cds-sql-collate": "error",
-      },
-    },
+  rules: {
+    "cap-config/cds-fiori-draft-compat": "error",
+    "cap-config/cds-features-odata-new-adapter": "error",
+    "cap-config/cds-features-cds-validate": "error",
+    "cap-config/cds-features-compat-save-drafts": "error",
+    "cap-config/cds-features-compat-assert-not-null": "error",
+    "cap-config/cds-features-compile-for-flows": "error",
+    "cap-config/cds-features-compat-restrict-where": "error",
+    "cap-config/cds-features-compat-static-auth": "error",
+    "cap-config/cds-features-compat-restrict-bound": "error",
+    "cap-config/cds-features-base64-binaries": "error",
+    "cap-config/cds-features-keys-in-data-compat": "error",
+    "cap-config/cds-features-kibana-formatter": "error",
+    "cap-config/cds-fiori-calc-elements": "error",
+    "cap-config/cds-remote-native-fetch": "error",
+    "cap-config/cds-multitenant-client-cert-header": "error",
+    "cap-config/cds-log-kibana-custom-fields": "error",
+    "cap-config/cds-sql-runtime-view-mode": "error",
+    "cap-config/cds-features-new-draft-via-action": "error",
+    "cap-config/cds-features-compat-texts-entities": "error",
+    "cap-config/cds-features-stream-compat": "error",
+    "cap-config/cds-features-async-handler-compat": "error",
+    "cap-config/cds-features-service-level-restrictions": "error",
+    "cap-config/cds-features-consistent-params": "error",
+    "cap-config/cds-drafts-cancellation-timeout": "error",
+    "cap-config/cds-requires-db-database": "error",
+    "cap-config/cds-cdsc-newparser": "error",
+    "cap-config/cds-features-serve-on-root": "error",
+    "cap-config/cds-features-xssec-compat": "error",
+    "cap-config/cds-fiori-lean-draft": "error",
+    "cap-config/cds-requires-middlewares": "error",
+    "cap-config/cds-sql-native-hana-associations": "error",
+    "cap-config/cds-sql-transitive-localized-views": "error",
+    "cap-config/cds-features-odata-metadata-compat": "error",
+    "cap-config/cds-features-legacy-srv-results": "error",
+    "cap-config/cds-features-bulk-inserts-via-rest": "error",
+    "cap-config/cds-features-compat-clone-appends": "error",
+    "cap-config/cds-features-compat-srv-getters": "error",
+    "cap-config/cds-i18n-fatjson": "error",
+    "cap-config/cds-mcp-auto-config": "error",
+    "cap-config/cds-fiori-direct-crud": "error",
+    "cap-config/cds-sql-collate": "error",
   },
 };
 
-// Fix circular reference after plugin is defined
-const recommendedConfig = plugin.configs?.recommended as Record<string, unknown>;
-(recommendedConfig.plugins as Record<string, ESLint.Plugin>)["cap-config"] = plugin;
+// eslint-disable-next-line typescript/no-unsafe-type-assertion
+plugin.rules = rules as unknown as ESLint.Plugin["rules"];
+plugin.configs = { recommended };
 
 export default plugin;

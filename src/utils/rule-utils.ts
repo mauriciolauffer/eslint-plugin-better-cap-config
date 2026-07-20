@@ -20,6 +20,10 @@ export interface DeprecatedConfigPattern {
 /**
  * Checks if a node value matches the deprecated value
  */
+function getMemberKey(member: MemberNode | undefined): string | null {
+  return member?.name.type === "String" && member.name?.value ? member.name.value : null;
+}
+
 function isDeprecatedValue(node: MemberNode, deprecatedValue?: boolean | string): boolean {
   const value = node.value;
   if (deprecatedValue === undefined) {
@@ -59,9 +63,6 @@ export function checkDeprecatedCdsPattern(
   const memberAncestors = context.sourceCode
     .getAncestors(node)
     .filter((parentNode) => parentNode.type === "Member");
-
-  const getMemberKey = (member: (typeof memberAncestors)[number] | undefined): string | null =>
-    member?.name.type === "String" && member.name?.value ? member.name.value : null;
 
   const parentMember = memberAncestors.at(-1);
   const parentKey = getMemberKey(parentMember);

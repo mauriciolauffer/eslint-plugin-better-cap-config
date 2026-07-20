@@ -18,7 +18,10 @@ describe("cds-features-bulk-inserts-via-rest rule", () => {
         { code: "{}", filename: "test.json" },
         { code: '{"cds": {"requires": {"db": "sqlite"}}}', filename: "package.json" },
         { code: '{"cds": {"features": {"preview": true}}}', filename: "package.json" },
-        { code: '{"cds": {"features": {"bulk_inserts_via_rest": true}}}', filename: "package.json" },
+        {
+          code: '{"cds": {"features": {"bulk_inserts_via_rest": true}}}',
+          filename: "package.json",
+        },
         {
           code: '{"cds": {"features": {"bulk_inserts_via_rest": "true"}}}',
           filename: "package.json",
