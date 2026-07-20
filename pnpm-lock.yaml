@@ -34,8 +34,8 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(eslint@9.39.5)
       eslint-plugin-eslint-plugin:
-        specifier: ^7.4.2
-        version: 7.4.2(eslint@9.39.5)
+        specifier: ^7.5.0
+        version: 7.5.0(eslint@9.39.5)
       oxfmt:
         specifier: ^0.59.0
         version: 0.59.0
@@ -46,8 +46,8 @@ importers:
         specifier: ^0.25.0
         version: 0.25.0
       typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
+        specifier: ^7.0.2
+        version: 7.0.2
       vitest:
         specifier: ^4.1.10
         version: 4.1.10(@types/node@26.1.1)(@vitest/coverage-v8@4.1.10)(@vitest/ui@4.1.10)(vite@7.3.2(@types/node@26.1.1))
@@ -1089,8 +1089,8 @@ packages:
     peerDependencies:
       eslint: '>=9'
 
-  eslint-plugin-eslint-plugin@7.4.2:
-    resolution: {integrity: sha512-pQ9wWbz4q2CCnKHyxGceDAGQvbYAGyko/3ad33cl2BgEc331zNEU4J1DTUNpy6ldoOpfIKt7R7FDvI6ZH6zHRw==}
+  eslint-plugin-eslint-plugin@7.5.0:
+    resolution: {integrity: sha512-WrYbQ1MXW5Di5/NrTxTCS8FXFjJqMW5wmZ9RbrdBuYy++W1SefFvDf1EM5FT9pwRiUkF2hnLtnbOSN2LhLYP2A==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24.0.0}
     peerDependencies:
       eslint: '>=9.0.0'
@@ -1398,8 +1398,8 @@ packages:
   object-deep-merge@2.0.1:
     resolution: {integrity: sha512-aKttDKcU3pyZqKcCkDhsMn70WmZFG2JGDQLP9EcLyTSIFQRCPWLAmBZRLJnrVUrhPG1jETEEbfdgbNtJf1LyMg==}
 
-  obug@2.1.3:
-    resolution: {integrity: sha512-9miFgM2OFba7hB+pRgvtV84pYTBaoTHohvmIgiRt6dRIzbwEOIaNaP+dIlGs2fNFoB0SeISs0Jz5WFVRid6Xyg==}
+  obug@2.1.4:
+    resolution: {integrity: sha512-4a+OsYv9UktOJKE+l1A4OufDgdRF9PifWj+tJnHURo/P+WOxpG4GzUFL9qCalmWauao6ogiG+QvnCovwPoyAWA==}
     engines: {node: '>=12.20.0'}
 
   once@1.4.0:
@@ -2307,7 +2307,7 @@ snapshots:
       istanbul-lib-report: 3.0.1
       istanbul-reports: 3.2.0
       magicast: 0.5.3
-      obug: 2.1.3
+      obug: 2.1.4
       std-env: 4.2.0
       tinyrainbow: 3.1.0
       vitest: 4.1.10(@types/node@26.1.1)(@vitest/coverage-v8@4.1.10)(@vitest/ui@4.1.10)(vite@7.3.2(@types/node@26.1.1))
@@ -2492,7 +2492,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-eslint-plugin@7.4.2(eslint@9.39.5):
+  eslint-plugin-eslint-plugin@7.5.0(eslint@9.39.5):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.5)
       eslint: 9.39.5
@@ -2534,7 +2534,7 @@ snapshots:
       minimatch: 9.0.5
       scslre: 0.3.0
       semver: 7.7.2
-      typescript: 7.0.2
+      typescript: 6.0.3
 
   eslint-scope@7.2.2:
     dependencies:
@@ -2854,7 +2854,7 @@ snapshots:
 
   object-deep-merge@2.0.1: {}
 
-  obug@2.1.3: {}
+  obug@2.1.4: {}
 
   once@1.4.0:
     dependencies:
@@ -3161,7 +3161,7 @@ snapshots:
       es-module-lexer: 2.3.1
       expect-type: 1.4.0
       magic-string: 0.30.21
-      obug: 2.1.3
+      obug: 2.1.4
       pathe: 2.0.3
       picomatch: 4.0.5
       std-env: 4.2.0
