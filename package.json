@@ -40,31 +40,31 @@
     "test": "pnpm build && vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:lint:json": "eslint -c eslint.json-test.config.js",
+    "test:lint:json": "eslint -c cap-cds/eslint.config.js",
     "test:ci": "vitest run --reporter=junit --outputFile=./test-results/junit-report.xml",
-    "lint": "eslint --cache && oxfmt --check .",
-    "lint:fix": "eslint --cache --fix && oxfmt .",
-    "lint:ci": "eslint --quiet -f @microsoft/eslint-formatter-sarif -o eslint.sarif",
-    "lint:json:stats": "SET TIMING=all && eslint -c eslint.json-test.config.js",
-    "format": "oxfmt ."
+    "lint": "oxfmt --check && oxlint",
+    "lint:fix": "oxfmt && oxlint --fix",
+    "lint:ci": "oxfmt --check && oxlint --format=github",
+    "lint:json:stats": "SET TIMING=all && eslint -c cap-cds/eslint.config.js --quiet",
+    "format": "oxfmt"
   },
   "devDependencies": {
     "@humanwhocodes/momoa": "^3.3.10",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^25.9.2",
-    "@vitest/coverage-v8": "4.1.8",
-    "@vitest/ui": "^4.1.8",
-    "eslint": "^9.39.4",
+    "@types/node": "^26.1.1",
+    "@vitest/coverage-v8": "4.1.10",
+    "@vitest/ui": "^4.1.10",
     "eslint-config-mlauffer-nodejs": "^3.1.1",
-    "eslint-plugin-eslint-plugin": "^7.4.0",
-    "oxfmt": "^0.54.0",
-    "typescript": "^6.0.3",
-    "typescript-eslint": "^8.61.0",
-    "vitest": "^4.1.8"
+    "eslint-plugin-eslint-plugin": "^7.5.0",
+    "oxfmt": "^0.59.0",
+    "oxlint": "^1.74.0",
+    "oxlint-tsgolint": "^0.25.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
   },
   "peerDependencies": {
     "@eslint/json": ">=1",
     "eslint": ">=9"
   },
-  "packageManager": "pnpm@11.5.2"
+  "packageManager": "pnpm@11.13.1"
 }
