@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0](https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/compare/v1.0.0...v1.1.0) (2026-07-23)
+
+
+### Features
+
+* cap v10 flags ([#6](https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/issues/6)) ([13e3fec](https://github.com/mauriciolauffer/eslint-plugin-better-cap-config/commit/13e3fec328c648fe9abc7b518fb97db52b8e94b7))
+
 ## 1.0.0 (2026-06-13)
 
 
